@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>רבקה הולצברג - בריאות שבאה מהטבע</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #fdfcf9; color: #1b3022; }
+        h1 { color: #1b3022; }
+        p { font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <h1>רבקה הולצברג</h1>
+    <h2>בריאות שבאה מהטבע</h2>
+    <p>האתר בבנייה... מתכונים ומדריכים יעלו בקרוב!</p>
+</body>
+</html>

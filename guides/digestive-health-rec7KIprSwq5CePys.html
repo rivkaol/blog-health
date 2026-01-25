@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 צעדים להקלה על מערכת העיכול</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* צבעים - מותאם למותג */
+            --primary: #C5922C;       /* זהב/אוקרה */
+            --primary-dark: #9E731F;
+            --text-highlight: #1B4D3E; /* ירוק עמוק - להדגשת מילים */
+            --highlight-bg: #f4ecd8;   /* רקע "מרקר" צהבהב עדין */
+            --bg-page: #FFFCF5;
+            --white: #ffffff;
+            --text-main: #333333;      /* אפור כהה נעים לקריאה */
+            --text-muted: #718096;
+            --disclaimer-bg: #F0F0F0;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            font-size: 19px; /* טקסט קריא וגדול */
+            line-height: 1.8; /* רווח נעים בין שורות */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 60px; /* מרווח פנימי נדיב */
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border-top: 8px solid var(--primary);
+        }
+
+        /* --- עיצוב טקסט משופר --- */
+        p { margin-bottom: 25px; margin-top: 0; }
+        ul, ol { margin-bottom: 30px; padding-right: 25px; }
+        li { margin-bottom: 10px; }
+
+        h1 { font-size: 2.8rem; text-align: center; margin-bottom: 30px; font-weight: 800; color: var(--text-highlight); }
+        h2 { color: var(--text-highlight); font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 700; }
+
+        /* --- ה"מרקר" המעוצב (Highlight) --- */
+        strong {
+            color: var(--text-highlight); /* המילה המודגשת תהיה בירוק עמוק */
+            font-weight: 700;
+            background-color: var(--highlight-bg); /* רקע עדין מאחורי המילה */
+            padding: 0 4px; /* קצת רווח מהצדדים */
+            border-radius: 4px; /* פינות מעוגלות להדגשה */
+            box-decoration-break: clone; /* שהעיצוב לא יישבר אם יורדים שורה */
+            -webkit-box-decoration-break: clone;
+        }
+
+        /* תמונות ופתיח */
+        .hero-box { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; margin-bottom: 30px; display: none; }
+        .hero-box img { width: 100%; height: 100%; object-fit: cover; }
+        .intro { font-size: 1.2rem; background: white; padding: 25px; border-right: 4px solid var(--primary); margin-bottom: 40px; font-style: italic; color: #555; }
+
+        /* --- כפתור והנעה לפעולה (לפני הסיכום) --- */
+        .cta-section { text-align: center; margin-top: 60px; margin-bottom: 40px; }
+        .cta-text { font-weight: 500; color: var(--text-highlight); font-size: 1.3rem; margin-bottom: 20px; display: block; }
+        
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            padding: 18px 60px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(197, 146, 44, 0.2);
+            font-size: 1.1rem;
+        }
+        .btn-main:hover { transform: translateY(-3px); background: var(--primary-dark); box-shadow: 0 15px 30px rgba(197, 146, 44, 0.3); }
+        .btn-icon { margin-right: 10px; font-size: 1.3rem; }
+
+        /* --- סיכום --- */
+        .summary-box {
+            background: #fcfcfc;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #f0f0f0;
+            margin-top: 20px;
+            display: none;
+        }
+        .summary-box h3 { margin-top: 0; color: var(--text-highlight); font-size: 1.3rem; margin-bottom: 15px; border-bottom: 2px solid var(--highlight-bg); display: inline-block; }
+
+        /* Navbar & Footer */
+        .navbar { background: white; padding: 15px; text-align: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 999; }
+        .navbar a { text-decoration: none; color: #555; margin: 0 15px; font-weight: 500; }
+        .disclaimer-box { margin-top: 60px; padding: 20px; background: var(--disclaimer-bg); font-size: 0.8rem; color: #888; text-align: justify; }
+
+        @media (max-width: 600px) { .container { width: 90%; padding: 30px 20px; } .hero-box { height: 200px; } .btn-main { width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <span style="font-weight:800; color:#1B4D3E;">רבקה הולצברג |</span>
+        <a href="../index.html">ראשי</a>
+        <a href="#">מאמרים</a>
+        <a href="#">יצירת קשר</a>
+    </div>
+
+    <div class="container">
+        <h1>3 צעדים להקלה על מערכת העיכול</h1>
+
+        <div class="hero-box" id="heroWrapper">
+            <img src="" id="mainImage">
+        </div>
+
+        <div class="intro">מערכת העיכול שלכם מדברת אליכם, וזה הזמן להקשיב לה! בעיות עיכול כרוניות לא חייבות להיות הגורל שלכם. בואו ללמוד איך לשפר את ההרגשה הכללית בדרך פשוטה ויעילה.
+</div>
+        
+        <div class="content">
+            <h2 id="צעד-1-תנו-למערכת-העיכול-להתאושש">צעד 1: תנו למערכת העיכול להתאושש</h2>
+<p>מה לעשות:</p>
+<ul>
+<li>הקדישו לפחות 20 דקות לכל ארוחה - לאכול בשקט, ללעוס היטב</li>
+<li>הימנעו מלשתות מים רבים במהלך הארוחה (רק לגימות קטנות)</li>
+<li>תנו למערכת העיכול הפסקה של 3-4 שעות בין ארוחות</li>
+</ul>
+<p>למה זה עובד:</p>
+<p>עיכול מתחיל בפה! <strong>לעיסה איטית</strong> משחררת אנזימי עיכול ומאותתת לקיבה להתכונן. כשאוכלים במהירות או תחת לחץ, העיכול לא מתרחש כמו שצריך.</p>
+<h2 id="צעד-2-הוסיפו-מזונות-ידידותיים-לעיכול">צעד 2: הוסיפו מזונות &quot;ידידותיים&quot; לעיכול</h2>
+<p>מה לעשות:</p>
+<ul>
+<li>התחילו את הבוקר עם מים פושרים ולימון (לא קר!)</li>
+<li>הוסיפו מזונות מותססים כמו כרוב כבוש, קימצ&#39;י, יוגורט טבעי ללא סוכר</li>
+<li>הקפידו על ירקות מבושלים במקום נא (יותר קל לעכל)</li>
+</ul>
+<p>למה זה עובד:</p>
+<p>מזונות מותססים מכילים <strong>בקטריות טובות</strong> (פרוביוטיקה טבעית) שעוזרות לאזן את המיקרוביום במעיים ומשפרות את תהליך העיכול.</p>
+<h2 id="צעד-3-הפחיתו-מזונות-שמכבידים-על-המערכת">צעד 3: הפחיתו מזונות שמכבידים על המערכת</h2>
+<p>מה להימנע (לפחות לתקופה):</p>
+<ul>
+<li>מזונות מעובדים עם תוספים מלאכותיים</li>
+<li><strong>חיטה וגלוטן</strong> (אפילו אם אתם לא צליאקים - יכול להכביד)</li>
+<li>סוכר מזוקק ומתוקים מלאכותיים</li>
+<li>מוצרי חלב כבדים בתקופת החריפות</li>
+</ul>
+<p>למה זה עובד:</p>
+<p>המזונות האלה יוצרים דלקת במערכת העיכול, מקשים על ספיגת חומרים מזינים, ומחמירים תסמינים כמו נפיחות וגזים.</p>
+<p>✨ מה הלאה?</p>
+<p>הצעדים האלה הם התחלה מצוינת, אבל אם אתם מתמודדים עם בעיות עיכול כבר חודשים ארוכים, כדאי להבין את השורש של הבעיה ולבנות תוכנית מותאמת אישית.</p>
+<p>רוצים ללכת צעד קדימה?</p>
+<p>🎯 הצטרפו לוובינר החינמי שלי: <strong>&quot;בטן רגועה - איך להרגיע את מערכת העיכול ולהרגיש קלות אמיתית&quot;</strong></p>
+<p>בוובינר תלמדו:</p>
+<p>✔️ מה באמת גורם לבעיות עיכול כרוניות (זה לא מה שחושבים)<br>✔️ איך לזהות את הטריגרים האישיים שלכם<br>✔️ פרוטוקול בן 3 שלבים להחזרת האיזון למערכת העיכול</p>
+<p>👉 לחצו כאן להרשמה לוובינר החינמי</p>
+<p><a href="https://rivkaholtsberg.co.il/webinar-beyen">https://rivkaholtsberg.co.il/webinar-beyen</a></p>
+<p>💬 שאלות? כתבו לי בפרטי - אני כאן כדי לעזור!</p>
+
+        </div>
+
+        <div class="cta-section" id="ctaWrapper">
+            <span class="cta-text">
+                רוצים ללכת צעד קדימה? הצטרפו לוובינר החינמי שלי.
+            </span>
+            <a href="https://rivkaholtsberg.co.il/webinar-beyen" id="btn1" class="btn-main">
+                להרשמה לוובינר
+                <span class="btn-icon">&larr;</span>
+            </a>
+        </div>
+
+        <div class="summary-box" id="summaryWrapper">
+            <h3>📝 לסיכום:</h3>
+            <div id="summaryText">
+               - אכלו לאט וללא לחץ.
+- הוסיפו מזונות מותססים לתפריט.
+- הפחיתו מזונות מעובדים ושומנים רוויים.
+- חפשו את השורש לבעיות בעיכול בעזרת מומחה.
+
+            </div>
+        </div>
+        
+        <div class="disclaimer-box">
+            <strong>⚠️ הבהרה חשובה:</strong>
+            המידע המוגש במדריך זה הינו למטרות אינפורמטיביות והעשרה בלבד, ואינו מהווה תחליף לייעוץ רפואי...
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #ccc; font-size: 0.8rem;">
+            © כל הזכויות שמורות לרבקה הולצברג
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // תמונה
+            var img = document.getElementById('mainImage');
+            var imgSrc = img.getAttribute('src');
+            if (imgSrc && imgSrc.includes('http') && imgSrc.length > 15) {
+                document.getElementById('heroWrapper').style.display = 'block';
+            }
+
+            // כפתור
+            var btn1 = document.getElementById('btn1');
+            var link1 = btn1.getAttribute('href');
+            if (link1 && link1.length > 1 && !link1.includes('#')) {
+                document.getElementById('ctaWrapper').style.display = 'block';
+            } else {
+                document.getElementById('ctaWrapper').style.display = 'none';
+            }
+
+            // סיכום
+            var sumTxt = document.getElementById('summaryText').innerText;
+            if (sumTxt.length > 5) {
+                document.getElementById('summaryWrapper').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

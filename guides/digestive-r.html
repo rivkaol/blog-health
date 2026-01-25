@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>רוגע למערכת העיכול: שלושה צעדים פשוטים</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* === כאן מגדירים את הצבעים לנושא (כרגע: עיכול/אוקרה) === */
+            
+            --primary: #C5922C;       /* צבע ראשי - אוקרה עמוק */
+            --primary-dark: #9E731F;  /* כהה יותר לטקסט */
+            --highlight: #FAF3E0;     /* רקע בהיר וצהבהב להדגשות */
+            --bg-page: #FFFCF5;       /* רקע דף שמנת חמים */
+            
+            /* צבעים קבועים לכל האתר */
+            --white: #ffffff;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --disclaimer-bg: #F0F0F0; /* רקע אפור לדיסקליימר */
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 8px solid var(--primary);
+        }
+
+        /* מניעת רווחים כפולים */
+        p { margin-bottom: 15px; margin-top: 0; }
+        ul, ol { margin-bottom: 20px; padding-right: 25px; margin-top: 0; }
+        li { margin-bottom: 8px; }
+
+        /* כותרות */
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: inline-block;
+            border-bottom: 3px solid var(--highlight);
+        }
+
+        /* הדגשות */
+        strong {
+            color: var(--primary-dark);
+            font-weight: 700;
+            background: linear-gradient(120deg, var(--highlight) 0%, var(--highlight) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 0 3px;
+        }
+
+        /* תמונה */
+        .hero-box {
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            display: none;
+        }
+        .hero-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* פתיח */
+        .intro {
+            font-size: 1.15rem;
+            background: linear-gradient(to right, var(--highlight), #ffffff);
+            padding: 25px;
+            border-radius: 15px;
+            border-right: 5px solid var(--primary);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* סיכום וכפתור */
+        .summary-box {
+            margin-top: 50px;
+            background: var(--highlight); /* משתמש בצבע הבהיר של הנושא */
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px dashed var(--primary);
+            display: none;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            padding: 15px 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            display: inline-block;
+            transition: 0.3s;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0, 0.1);
+            display: none;
+        }
+        .btn-main:hover {
+            transform: translateY(-2px);
+            background: var(--primary-dark);
+        }
+
+        /* --- הדיסקליימר החדש --- */
+        .disclaimer-box {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: var(--disclaimer-bg);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            text-align: justify;
+            border-right: 4px solid #ccc;
+        }
+        .disclaimer-title {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; width: 90%; }
+            .hero-box { height: 200px; }
+            .btn-main { width: 100%; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>רוגע למערכת העיכול: שלושה צעדים פשוטים</h1>
+
+        <div class="hero-box" id="heroWrapper">
+            <img src="" id="mainImage">
+        </div>
+
+        <div class="intro">לפעמים אנחנו מרגישים שכל ארוחה היא אתגר. מרגישים את התפוצצות, את הכבדות, ואולי אפילו כאב. זה הזמן להבין איך אפשר להקל על מערכת העיכול שלב אחרי שלב. מה דעתכם לקחת שליטה על הגוף שלכם ולהרגיש טוב יותר?
+</div>
+        
+        <div class="content">
+            <h2 id="תנו-למערכת-העיכול-להתאושש-🌿">תנו למערכת העיכול להתאושש 🌿</h2>
+<p><strong>עיכול טוב מתחיל בשקט:</strong> לאכול במהירות או תחת לחץ זה מתכון לצרות. חשוב <strong>להניח את תשומת הלב</strong> על הלעיסה והנשימה. כך, נוכל לשחרר אנזימי עיכול ולעזור לקיבה להתחיל את עבודתה בצורה חלקה.</p>
+<p>מה לעשות:</p>
+<ul>
+<li>הקדישו לפחות 20 דקות לכל ארוחה - <strong>ללעוס היטב</strong>.</li>
+<li>הימנעו מלשתות מים רבים במהלך הארוחה - רק לגימות קטנות.</li>
+<li>תנו למערכת העיכול הפסקה של 3-4 שעות בין ארוחות.</li>
+</ul>
+<h2 id="הוסיפו-מזונות-ידידותיים-לעיכול-💡">הוסיפו מזונות &#39;ידידותיים&#39; לעיכול 💡</h2>
+<p>פשוט להכניס <strong>שינויים קטנים בתזונה</strong> כדי להשפיע בגדול. המזונות שתבחרו בבוקר יכתיבו את תחושתכם כל היום.</p>
+<p>מה לעשות:</p>
+<ul>
+<li>התחילו את הבוקר עם מים פושרים ולימון - לא קר.</li>
+<li>הוסיפו מזונות מותססים: כמו כרוב כבוש, קימצ&#39;י, יוגורט טבעי ללא סוכר.</li>
+<li>הקפידו על ירקות מבושלים במקום נא - יותר קל לעיכול.</li>
+</ul>
+<h2 id="הפחיתו-מזונות-שמכבידים-על-המערכת-✨">הפחיתו מזונות שמכבידים על המערכת ✨</h2>
+<p>כולנו מכירים את ה<strong>גירויים שמפריעים</strong> - מזונות שגורמים לדלקות ולכבדות.</p>
+<p>מה להימנע (לפחות לתקופה):</p>
+<ul>
+<li>מזונות מעובדים עם תוספים מלאכותיים.</li>
+<li>חיטה וגלוטן - אפילו ללא קשר לצליאק, הם יכולים להכביד.</li>
+<li>סוכר מזוקק ומתוקים מלאכותיים.</li>
+<li>מוצרי חלב כבדים בתקופות החריפות.</li>
+</ul>
+<p>למה זה עובד:</p>
+<p>מניעת המזונות הללו יכולה <strong>לשפר את תחושת הבטן</strong> באופן משמעותי ולהקל על תסמינים כמו נפיחות וגזים.</p>
+<p>✨ מה הלאה?</p>
+<p>אם אתם מתמודדים עם <strong>תסמינים כרוניים</strong>, אתם לא לבד. לפעמים הפתרון נמצא בלמידה והבנה עמוקה יותר של הגוף שלכם. אל תתייאשו - מגיע לכם להרגיש טוב יותר!</p>
+
+        </div>
+
+        <div class="summary-box" id="summaryWrapper">
+            <h3>📝 לסיכום והמשך:</h3>
+            <div id="summaryText" style="text-align: right; display: inline-block;">
+                הקדישו 20 דקות לכל ארוחה ולעסו היטב., הוסיפו מזונות מותססים וירקות מבושלים., הפחיתו מזונות מעובדים וסוכר מזוקק., הכירו את הגוף שלכם ובנו תוכנית מותאמת.
+
+            </div>
+            <br>
+            <a href="#" id="btn1" class="btn-main">
+                קרא עוד בבלוג
+            </a>
+        </div>
+        
+        <div class="disclaimer-box">
+            <span class="disclaimer-title">⚠️ הבהרה חשובה:</span>
+            המידע המוגש במדריך זה הינו למטרות אינפורמטיביות והעשרה בלבד, ואינו מהווה תחליף לייעוץ רפואי, אבחון או טיפול מקצועי. התכנים מבוססים על ניסיון אישי וידע מקצועי בתחום אורח החיים הבריא, אך אינם מחליפים התייעצות עם רופא או דיאטן קליני. בכל עניין רפואי או שינוי תזונתי משמעותי, מומלץ להיוועץ באיש מקצוע המוסמך לכך.
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #888; font-size: 0.85rem;">
+            © כל הזכויות שמורות לרבקה הולצברג
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // תמונה
+            var img = document.getElementById('mainImage');
+            var imgSrc = img.getAttribute('src');
+            if (imgSrc && imgSrc.includes('http') && imgSrc.length > 15) {
+                document.getElementById('heroWrapper').style.display = 'block';
+            }
+
+            // כפתור
+            var btn1 = document.getElementById('btn1');
+            var link1 = btn1.getAttribute('href');
+            var txt1 = btn1.innerText;
+            if (link1 && link1.includes('http') && txt1.length > 2) {
+                btn1.style.display = 'inline-block';
+            }
+
+            // סיכום
+            var sumTxt = document.getElementById('summaryText').innerText;
+            if (sumTxt.length > 5 || btn1.style.display === 'inline-block') {
+                document.getElementById('summaryWrapper').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

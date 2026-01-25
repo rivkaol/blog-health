@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>רבקה הולצברג | הבלוג לבריאות טבעית</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2EC4B6;       /* מנטה */
+            --primary-dark: #1f857b;
+            --bg-page: #F7FAF8;       /* רקע כללי */
+            --white: #ffffff;
+            --text-main: #2D3748;
+            --text-light: #718096;
+            --card-hover: #ffffff;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--white);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .brand {
+            font-weight: 800;
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Header */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(180deg, #e0f2f1 0%, var(--bg-page) 100%);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* רספונסיבי */
+            gap: 30px;
+        }
+
+        /* --- עיצוב הכרטיסייה (בלי תמונה) --- */
+        .post-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.02);
+            position: relative;
+            height: 100%; /* גובה אחיד */
+        }
+
+        .post-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 40px rgba(46, 196, 182, 0.15);
+            border-color: var(--primary);
+        }
+
+        .top-accent {
+            height: 6px;
+            background: var(--primary);
+            width: 100%;
+        }
+
+        .card-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 0 0 15px 0;
+            line-height: 1.3;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .excerpt {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            flex-grow: 1; /* דוחף את הכפתור למטה */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* חותך אחרי 3 שורות */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary-dark);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+
+        .arrow { transition: transform 0.3s; }
+        .post-card:hover .arrow { transform: translateX(-5px); }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .posts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <span class="brand">רבקה הולצברג</span>
+        <div class="nav-links">
+            <a href="#">ראשי</a>
+            <a href="#">אודות</a>
+            <a href="#">צור קשר</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>בריאות טבעית, פשוטה ומעשית</h1>
+        <p>ארגז הכלים שלך לאורח חיים בריא, מאוזן ושמח יותר.</p>
+    </div>
+
+    <div class="container">
+        <div class="posts-grid">
+            
+            <a href="guides/[גררי לכאן: Slug].html" class="post-card">
+    <div class="card-content">
+        <div class="top-accent"></div>
+        
+        <span class="date">מאמר חדש ✨</span>
+        
+        <h3>רוגע למערכת העיכול: שלושה צעדים פשוטים</h3>
+        
+        <p class="excerpt">לפעמים אנחנו מרגישים שכל ארוחה היא אתגר. מרגישים את התפוצצות, את הכבדות, ואולי אפילו כאב. זה הזמן להבין איך אפשר להקל על מערכת העיכול שלב אחרי שלב. מה דעתכם לקחת שליטה על הגוף שלכם ולהרגיש טוב יותר?
+</p>
+        
+        <div class="card-footer">
+            <span class="btn-text">להמשך קריאה</span>
+            <span class="arrow">&larr;</span>
+        </div>
+    </div>
+</a>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        © כל הזכויות שמורות לרבקה הולצברג | נבנה באהבה
+    </div>
+
+</body>
+</html>

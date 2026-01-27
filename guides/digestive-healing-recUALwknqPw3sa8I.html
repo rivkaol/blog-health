@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מזונות שמרפאים את העיכול אחרי גיל 45</title>
+    <title>המדריך המלא: מזונות שמרפאים את העיכול מעל גיל 45</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -18,44 +18,49 @@
         }
 
         body { font-family: 'Rubik', sans-serif; background-color: var(--bg-cream); color: var(--text-dark); margin: 0; padding: 0; font-size: 19px; line-height: 1.8; }
+        
+        /* Navbar - לא דביק */
         .navbar { background: var(--white); padding: 15px; text-align: center; border-bottom: 1px solid #eee; position: relative; }
         .navbar .brand { font-weight: 800; color: var(--primary-green); font-size: 1.2rem; }
 
         .container { max-width: 850px; margin: 20px auto 60px auto; background: var(--white); padding: 40px 60px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border-top: 10px solid var(--primary-green); }
 
         h1 { font-size: 2.6rem; text-align: center; color: var(--primary-green); font-weight: 800; line-height: 1.2; margin-bottom: 30px; }
-        h2 { font-size: 1.8rem; color: var(--primary-green); border-bottom: 3px solid var(--light-gold); display: inline-block; margin-top: 40px; margin-bottom: 20px; font-weight: 700; }
-        h3 { font-size: 1.4rem; color: var(--accent-gold); margin-top: 25px; margin-bottom: 10px; font-weight: 700; }
+        h2 { font-size: 1.8rem; color: var(--primary-green); border-bottom: 3px solid var(--light-gold); display: inline-block; margin-top: 45px; margin-bottom: 25px; font-weight: 700; }
+        h3 { font-size: 1.4rem; color: var(--accent-gold); margin-top: 25px; margin-bottom: 15px; font-weight: 700; }
 
         strong { color: var(--primary-green); font-weight: 700; background-color: var(--light-gold); padding: 0 4px; border-radius: 4px; }
 
-        .intro-box { background: var(--white); padding: 25px; border-right: 5px solid var(--accent-gold); margin-bottom: 35px; font-style: italic; border-radius: 0 12px 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .intro-box { background: var(--white); padding: 25px; border-right: 5px solid var(--accent-gold); margin-bottom: 35px; border-radius: 0 12px 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
 
-        /* רשימות מזונות */
-        .food-list { list-style: none; padding: 0; margin-bottom: 30px; }
-        .food-list li { margin-bottom: 12px; padding: 15px; border-radius: 12px; display: flex; align-items: flex-start; }
-        .food-list.destructive li { background: #fef2f2; border-right: 4px solid var(--danger); }
-        .food-list.healing li { background: #f0fdf4; border-right: 4px solid var(--success); }
-        .food-icon { margin-left: 12px; font-size: 1.2rem; }
+        /* רשימות מזונות (Destructive & Healing) */
+        .food-section { margin-bottom: 40px; }
+        .food-category { background: #fdfdfd; padding: 20px; border-radius: 15px; border: 1px solid #f0f0f0; margin-bottom: 20px; }
+        .food-category h4 { margin: 0 0 10px 0; font-size: 1.2rem; display: flex; align-items: center; }
+        .food-category p.reason { font-size: 0.95rem; color: #666; font-style: italic; margin-top: 5px; }
 
-        /* ארוחות ותפריטים */
-        .meal-section { margin: 40px 0; }
-        .meal-card { background: #fdfdfd; border: 1px solid #f0f0f0; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
-        .meal-card h4 { margin: 0 0 10px 0; color: var(--primary-green); font-size: 1.2rem; display: flex; align-items: center; }
-        .meal-options { font-size: 0.95rem; color: #555; }
+        .destructive-title { color: var(--danger); }
+        .healing-title { color: var(--success); }
 
-        /* עקרונות וטעויות */
-        .grid-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .info-card { background: var(--white); padding: 20px; border-radius: 15px; border: 1px solid #eee; }
-        .info-card h4 { color: var(--accent-gold); margin-top: 0; }
+        /* כרטיסיות ארוחות */
+        .meal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .meal-card { background: #fcfcfc; border: 1px solid #f0f0f0; padding: 20px; border-radius: 15px; }
+        .meal-card h4 { margin-top: 0; color: var(--primary-green); border-bottom: 1px solid #eee; padding-bottom: 8px; }
 
-        .cta-section { text-align: center; margin: 60px 0; padding: 40px; background: var(--bg-cream); border-radius: 20px; border: 1px solid var(--light-gold); }
-        .btn-main { background: var(--accent-gold); color: white; padding: 18px 50px; text-decoration: none; font-weight: 700; border-radius: 50px; display: inline-flex; align-items: center; transition: 0.3s; box-shadow: 0 10px 20px rgba(197, 146, 44, 0.2); }
+        /* עקרונות הצלחה */
+        .principles-box { background: var(--bg-cream); padding: 30px; border-radius: 20px; border: 1px solid var(--light-gold); margin: 40px 0; }
+        .principle-item { margin-bottom: 20px; }
+
+        /* טעויות וסיכום */
+        .mistakes-box { background: #fef2f2; padding: 30px; border-radius: 15px; border: 1px solid #fee2e2; margin-top: 40px; }
+
+        .cta-section { text-align: center; margin: 60px 0; padding: 40px; background: var(--primary-green); color: white; border-radius: 20px; }
+        .btn-main { background: var(--accent-gold); color: white; padding: 18px 50px; text-decoration: none; font-weight: 700; border-radius: 50px; display: inline-flex; align-items: center; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         @media (max-width: 600px) {
-            .container { width: 92%; padding: 25px 15px; }
+            .container { width: 92%; padding: 30px 15px; }
             h1 { font-size: 1.9rem; }
-            .grid-box { grid-template-columns: 1fr; }
+            .meal-grid { grid-template-columns: 1fr; }
             .btn-main { width: 100%; box-sizing: border-box; justify-content: center; }
         }
     </style>
@@ -65,93 +70,128 @@
     <div class="navbar"><span class="brand">רבקה הולצברג | בריאות טבעית</span></div>
 
     <div class="container">
-        <h1>מזונות שמרפאים את העיכול מעל גיל 45</h1>
+        <h1>מדריך מיוחד: מזונות שמרפאים את העיכול מעל גיל 45</h1>
 
         <div class="intro-box">
-            👋 שלום ומה נשמע לבטן שלך?<br>
-            אני רבקה הולצברג, מאמנת בריאות טבעית וכבר 12 שנה אני עוזרת לנשים להיפטר מנפיחות וגזים. המדריך הזה נולד כדי לענות על השאלה: "למה הבטן שלי נפוחה למרות שאני אוכלת בריא?"
+            👋 <strong>שלום ומה נשמע לבטן שלך?</strong><br>
+            אני רבקה הולצברג, מאמנת בריאות טבעית וכבר 12 שנה אני עוזרת לנשים להיפטר מנפיחות, גזים ואי נוחות. המדריך הזה נולד מתוך מאות שיחות עם נשים שאמרו לי: "אבל אני אוכלת בריא! למה הבטן שלי עדיין נפוחה?" התשובה? <strong>לא כל מזון "בריא" מתאים למערכת העיכול שלך מגיל 45 ומעלה.</strong>
         </div>
 
-        <h2>🔍 למה העיכול השתנה?</h2>
-        
-
-[Image of the human digestive system]
-
-        <p>מעל גיל 45, הגוף עובר 4 שינויים מרכזיים:</p>
+        <h2>🔍 למה העיכול שלך השתנה אחרי גיל 45?</h2>
+        <p>מערכת העיכול שלנו עוברת 4 שינויים מרכזיים המשפיעים על הדרך בה אנו מעבדות מזון:</p>
         <ul>
-            <li><strong>ירידה בייצור אנזימים:</strong> פחות חומצת קיבה מקשה על הפירוק.</li>
-            <li><strong>האטה בתנועתיות:</strong> המעיים עובדים לאט יותר.</li>
-            <li><strong>שינויים הורמונליים:</strong> משפיעים על חיידקי המעיים.</li>
-            <li><strong>רגישות מוגברת:</strong> הגוף מגיב למזונות שפעם עברו "חלק".</li>
+            <li>✦ <strong>ירידה בייצור אנזימי עיכול:</strong> פחות חומצת קיבה ופחות אנזימים משפיעים על פירוק המזון.</li>
+            <li>✦ <strong>האטה במערכת העיכול:</strong> התנועתיות של המעיים הופכת איטית יותר.</li>
+            <li>✦ <strong>שינויים הורמונליים:</strong> שינויים אלו משפיעים ישירות על הרכב חיידקי המעיים.</li>
+            <li>✦ <strong>רגישות מוגברת:</strong> מזונות שפעם לא הפריעו לך, גורמים כעת לאי נוחות ונפיחות.</li>
         </ul>
 
-        <h2>❌ מזונות שהורסים את העיכול</h2>
-        <ul class="food-list destructive">
-            <li><span class="food-icon">🚫</span><div><strong>ירקות גולמיים:</strong> ברוקולי, כרוב, כרובית גולמית. הסיבים קשים מדי לפירוק.</div></li>
-            <li><span class="food-icon">🚫</span><div><strong>עומס פירות:</strong> שייקים עם 3+ פירות או פרי אחרי ארוחה יוצרים תסיסה.</div></li>
-            <li><span class="food-icon">🚫</span><div><strong>דגנים מלאים:</strong> לחם מלא רגיל וגלוטן עלולים ליצור דלקת.</div></li>
-            <li><span class="food-icon">🚫</span><div><strong>מוצרי חלב ומתוקים:</strong> חלב פרה וממתיקים מלאכותיים משבשים את המיקרוביום.</div></li>
-        </ul>
+        <h2>❌ מזונות שהורסים את העיכול שלך</h2>
+        <div class="food-section">
+            <div class="food-category">
+                <h4 class="destructive-title">🚫 ירקות גולמיים וקשים</h4>
+                ברוקולי גולמי | כרוב גולמי | כרובית גולמית | פלפל גולמי | מלפפון עם קליפה | בצל גולמי בכמויות גדולות.<br>
+                <p class="reason"><strong>למה?</strong> אין לך מספיק אנזימים לפרק את הסיבים הקשים הללו במצבם הגולמי.</p>
+            </div>
+            <div class="food-category">
+                <h4 class="destructive-title">🚫 פירות בכמויות גדולות</h4>
+                שייקים עם 3+ פירות | פירות מיובשים | אבטיח או מלון בכמויות גדולות | פירות מיד אחרי ארוחה | מיצי פירות.<br>
+                <p class="reason"><strong>למה?</strong> פרוקטוז (סוכר הפרי) בכמויות גדולות מתסיס במעיים ויוצר גזים.</p>
+            </div>
+            <div class="food-category">
+                <h4 class="destructive-title">🚫 דגנים מלאים ולחמים</h4>
+                לחם מלא רגיל | פסטה מלאה | קינואה בכמויות גדולות | שיבולת שועל לא מבושלת היטב | פצפוצי אורז.<br>
+                <p class="reason"><strong>למה?</strong> גלוטן וסיבים בלתי מעוכלים יוצרים עומס דלקתי במערכת העיכול.</p>
+            </div>
+            <div class="food-category">
+                <h4 class="destructive-title">🚫 קטניות, חלב וממתיקים</h4>
+                חומוס בכמויות גדולות | עדשים לא מוכנים נכון | חלב פרה | יוגורט רגיל | ממתיקים מלאכותיים (דיאט) | מסטיקים ללא סוכר.<br>
+                <p class="reason"><strong>למה?</strong> ייצור הלקטאז יורד עם הגיל, וסוכרים מורכבים במזונות אלו מתסיסים במעי.</p>
+            </div>
+        </div>
 
-        <h2>✅ מזונות שמרפאים ומרגיעים</h2>
-        <ul class="food-list healing">
-            <li><span class="food-icon">💚</span><div><strong>מבושל ומאוד:</strong> בטטה, דלעת וקישוא. הבישול מפרק את הסיבים עבורך.</div></li>
-            <li><span class="food-icon">💚</span><div><strong>חלבונים קלים:</strong> דג לבן, ביצים רכות והודו טחון.</div></li>
-            <li><span class="food-icon">💚</span><div><strong>שומנים בריאים:</strong> שמן זית, אבוקדו וטחינה גולמית.</div></li>
-            <li><span class="food-icon">💚</span><div><strong>משקאות ותבלינים:</strong> תה ג'ינג'ר, כורכום, ומרק עצמות.</div></li>
-        </ul>
+        <h2>✅ מזונות שמרפאים ומרגיעים את העיכול</h2>
+        <div class="food-section">
+            <div class="food-category">
+                <h4 class="healing-title">💚 ירקות מבושלים וחלבונים קלים</h4>
+                בטטה מאודה | דלעת קלויה | גזר וקישוא מאודים | תרד | סלק מבושל | דג לבן | עוף ללא עור | ביצים רכות | סלמון.<br>
+                <p class="reason"><strong>למה?</strong> הבישול מפרק את הסיבים, והחלבונים הקלים הללו פשוטים מאוד לפירוק וספיגה.</p>
+            </div>
+            <div class="food-category">
+                <h4 class="healing-title">💚 שומנים בריאים ודגנים חלופיים</h4>
+                שמן זית | אבוקדו (רבע-חצי) | טחינה גולמית | שמן קוקוס | אגוזים מושרים (5-7) | אורז בסמטי לבן | לחם כוסמין מותסס | תמרים (1-2).<br>
+                <p class="reason"><strong>למה?</strong> שומנים אלו מפחיתים דלקת, והדגנים המותססים מכילים מינון נמוך ונוח של סיבים.</p>
+            </div>
+            <div class="food-category">
+                <h4 class="healing-title">💚 משקאות, תבלינים וצמחי מרפא</h4>
+                מרק עצמות | תה ג'ינג'ר טרי | תה קמומיל או מנטה | מים עם לימון | כורכום | פנל (שומר) | כמון | קינמון.<br>
+                <p class="reason"><strong>למה?</strong> נוזלים חמימים מרגיעים את המעי, ותבלינים אלו מעוררים ייצור אנזימי עיכול.</p>
+            </div>
+        </div>
 
-        <h2>🍽️ תפריט רעיונות לארוחות</h2>
-        <div class="meal-section">
+        <h2>🍽️ רעיונות לארוחות - בנה לעצמך תפריט</h2>
+        <div class="meal-grid">
             <div class="meal-card">
                 <h4>🌅 ארוחת בוקר</h4>
-                <div class="meal-options">• 2 ביצים רכות + רבע אבוקדו + לחם כוסמין<br>• דייסת שיבולת שועל מבושלת היטב + קינמון ותמר<br>• שייק חלבון: חלב קוקוס + חצי בננה + טחינה</div>
+                • 2 ביצים רכות/אומלט + רבע אבוקדו + לחם כוסמין<br>
+                • דייסת שיבולת שועל מבושלת + קינמון ודבש<br>
+                • שייק: חלב קוקוס + חצי בננה + טחינה ותמר
             </div>
             <div class="meal-card">
-                <h4>🌞 ארוחת צהריים (נוסחת הצלחת)</h4>
-                <div class="meal-options">רבע חלבון (עוף/דג) + רבע פחמימה (אורז בסמטי/בטטה) + חצי צלחת ירקות מבושלים + שמן זית ולימון.</div>
+                <h4>🌞 ארוחת צהריים</h4>
+                <strong>נוסחת הצלחת:</strong> רבע חלבון (עוף/דג) + רבע פחמימה (אורז/בטטה) + חצי צלחת ירקות מבושלים + שמן זית ולימון.
             </div>
             <div class="meal-card">
-                <h4>🌙 ארוחת ערב (קלה ומוקדמת)</h4>
-                <div class="meal-options">• מרק ירקות עשיר עם חלבון<br>• דג אפוי + ירק מאודה אחד<br>• אומלט ירקות מאודים</div>
+                <h4>🌙 ארוחת ערב</h4>
+                • מרק מזין (עצמות/ירקות) עם חלבון + לחם כוסמין<br>
+                • דג אפוי + אורז לבן + ירק מאודה אחד<br>
+                • אומלט עם ירקות מאודים ופרוסת לחם
+            </div>
+            <div class="meal-card">
+                <h4>🥜 חטיפים בריאים</h4>
+                • 5-7 שקדים מושרים<br>
+                • רבע אבוקדו עם מלח ולימון<br>
+                • 1-2 תמרים או ביצה קשה
             </div>
         </div>
 
-        <div class="grid-box">
-            <div class="info-card">
-                <h4>🎯 עקרונות להצלחה</h4>
-                • <strong>עיתוי:</strong> חלון אכילה של 10 שעות.<br>
-                • <strong>לעיסה:</strong> 20 פעמים לכל ביס.<br>
-                • <strong>שתייה:</strong> מים חמימים עם לימון בבוקר.
+        <div class="principles-box">
+            <h2>🎯 עקרונות חשובים להצלחה</h2>
+            <div class="principle-item">
+                <strong>⏰ עיתוי:</strong> ארוחות במתחם של 10 שעות (8:00-18:00). הפסקת 12-14 שעות בלילה ו-4-5 שעות בין הארוחות.
             </div>
-            <div class="info-card">
-                <h4>🚫 שילובים להימנע</h4>
-                • פירות בסוף ארוחה מלאה.<br>
-                • מים קרים מאוד תוך כדי אוכל.<br>
-                • אכילה פחות מ-3 שעות לפני שינה.
+            <div class="principle-item">
+                <strong>🥄 איך לאכול:</strong> לעסי כל ביס 20 פעמים. אכלי בשקט ללא הסחות דעת, ובצעי 5 דקות נשימות לפני הארוחה.
             </div>
+            <div class="principle-item">
+                <strong>💧 שתייה:</strong> מים חמימים עם לימון 20 דקות לפני הבוקר. שתי בין הארוחות, ותה צמחים 30 דקות אחרי האוכל.
+            </div>
+            <div class="principle-item">
+                <strong style="background-color: #fee2e2;">🚫 שילובים להימנע:</strong> פירות מיד אחרי ארוחה מלאה | מים קרים מאוד עם האוכל | אכילה פחות מ-3 שעות לפני השינה.
+            </div>
+        </div>
+
+        <div class="mistakes-box">
+            <h3 style="color: var(--danger); margin-top:0;">⚠️ 5 טעויות להימנע מהן</h3>
+            1. <strong>"אני אתחיל מחר"</strong> – התחילי היום בשינוי קטן אחד!<br>
+            2. <strong>"אני אעשה בצורה מושלמת"</strong> – 80% עקביות עדיפה על שלמות.<br>
+            3. <strong>"זה לא עובד לי"</strong> – תני לגוף 3-4 שבועות של התאמה.<br>
+            4. <strong>"אני אוסיף תוספים"</strong> – המזון הוא הריפוי הראשון, התוספים אחר כך.<br>
+            5. <strong>"אני לבד בזה"</strong> – חפשי תמיכה והכוונה.
         </div>
 
         <div class="cta-section">
-            <span style="font-size: 1.3rem; color: var(--primary-green); display: block; margin-bottom: 20px;">
-                רוצה את השיטה המלאה להקלה על העיכול?<br><strong>הצטרפי להרצאה החינמית "בטן רגועה"</strong>
-            </span>
-            <a href="https://rivkaholtsberg.co.il/webinar-beyen" class="btn-main">להרשמה חינם &larr;</a>
+            <h2 style="color: white; border: none; margin-top: 0;">💪 השלב הבא שלך</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 25px;">
+                רוצה ללמוד את השיטה המלאה להקלה על העיכול ולגלות את הסיבה האמיתית לנפיחות שלך?
+            </p>
+            <a href="https://rivkaholtsberg.co.il/webinar-beyen" class="btn-main">
+                הצטרפי להרצאת הוובינר החינמית "בטן רגועה" &larr;
+            </a>
         </div>
 
-        <div class="summary-box">
-            <h3>⚠️ 5 טעויות להימנע מהן:</h3>
-            <ol style="font-size: 0.95rem;">
-                <li><strong>"אני אתחיל מחר"</strong> – התחילי היום בשינוי קטן אחד.</li>
-                <li><strong>ציפייה לשלמות</strong> – 80% עקביות זה מצוין.</li>
-                <li><strong>חוסר סבלנות</strong> – תני לגוף 3-4 שבועות להתאזן.</li>
-                <li><strong>הסתמכות על תוספים</strong> – המזון הוא הריפוי הראשון.</li>
-                <li><strong>לנסות לבד</strong> – חפשי תמיכה והכוונה מקצועית.</li>
-            </ol>
-        </div>
-
-        <div class="disclaimer">
-            <strong>⚠️ הבהרה:</strong> המידע במדריך מיועד להעשרה בלבד ואינו תחליף לייעוץ רפואי אישי.
+        <div style="text-align: center; color: #888; font-size: 0.8rem; margin-top: 40px;">
+            © כל הזכויות שמורות לרבקה הולצברג | המידע להעשרה בלבד ואינו תחליף לייעוץ רפואי
         </div>
     </div>
 </body>

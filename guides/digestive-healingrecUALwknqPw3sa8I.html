@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מזונות שמרפאים את העיכול אחרי גיל 45</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* צבעים - מותאם למותג */
+            --primary: #C5922C;       /* זהב/אוקרה */
+            --primary-dark: #9E731F;
+            --text-highlight: #1B4D3E; /* ירוק עמוק - להדגשת מילים */
+            --highlight-bg: #f4ecd8;   /* רקע "מרקר" צהבהב עדין */
+            --bg-page: #FFFCF5;
+            --white: #ffffff;
+            --text-main: #333333;      /* אפור כהה נעים לקריאה */
+            --text-muted: #718096;
+            --disclaimer-bg: #F0F0F0;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            font-size: 19px; /* טקסט קריא וגדול */
+            line-height: 1.8; /* רווח נעים בין שורות */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 60px; /* מרווח פנימי נדיב */
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border-top: 8px solid var(--primary);
+        }
+
+        /* --- עיצוב טקסט משופר --- */
+        p { margin-bottom: 25px; margin-top: 0; }
+        ul, ol { margin-bottom: 30px; padding-right: 25px; }
+        li { margin-bottom: 10px; }
+
+        h1 { font-size: 2.8rem; text-align: center; margin-bottom: 30px; font-weight: 800; color: var(--text-highlight); }
+        h2 { color: var(--text-highlight); font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; font-weight: 700; }
+
+        /* --- ה"מרקר" המעוצב (Highlight) --- */
+        strong {
+            color: var(--text-highlight); /* המילה המודגשת תהיה בירוק עמוק */
+            font-weight: 700;
+            background-color: var(--highlight-bg); /* רקע עדין מאחורי המילה */
+            padding: 0 4px; /* קצת רווח מהצדדים */
+            border-radius: 4px; /* פינות מעוגלות להדגשה */
+            box-decoration-break: clone; /* שהעיצוב לא יישבר אם יורדים שורה */
+            -webkit-box-decoration-break: clone;
+        }
+
+        /* תמונות ופתיח */
+        .hero-box { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; margin-bottom: 30px; display: none; }
+        .hero-box img { width: 100%; height: 100%; object-fit: cover; }
+        .intro { font-size: 1.2rem; background: white; padding: 25px; border-right: 4px solid var(--primary); margin-bottom: 40px; font-style: italic; color: #555; }
+
+        /* --- כפתור והנעה לפעולה (לפני הסיכום) --- */
+        .cta-section { text-align: center; margin-top: 60px; margin-bottom: 40px; }
+        .cta-text { font-weight: 500; color: var(--text-highlight); font-size: 1.3rem; margin-bottom: 20px; display: block; }
+        
+        .btn-main {
+            background: var(--primary);
+            color: white;
+            padding: 18px 60px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(197, 146, 44, 0.2);
+            font-size: 1.1rem;
+        }
+        .btn-main:hover { transform: translateY(-3px); background: var(--primary-dark); box-shadow: 0 15px 30px rgba(197, 146, 44, 0.3); }
+        .btn-icon { margin-right: 10px; font-size: 1.3rem; }
+
+        /* --- סיכום --- */
+        .summary-box {
+            background: #fcfcfc;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #f0f0f0;
+            margin-top: 20px;
+            display: none;
+        }
+        .summary-box h3 { margin-top: 0; color: var(--text-highlight); font-size: 1.3rem; margin-bottom: 15px; border-bottom: 2px solid var(--highlight-bg); display: inline-block; }
+
+        /* Navbar & Footer */
+        .navbar { background: white; padding: 15px; text-align: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 999; }
+        .navbar a { text-decoration: none; color: #555; margin: 0 15px; font-weight: 500; }
+        .disclaimer-box { margin-top: 60px; padding: 20px; background: var(--disclaimer-bg); font-size: 0.8rem; color: #888; text-align: justify; }
+
+        @media (max-width: 600px) { .container { width: 90%; padding: 30px 20px; } .hero-box { height: 200px; } .btn-main { width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <span style="font-weight:800; color:#1B4D3E;">רבקה הולצברג |</span>
+        <a href="../index.html">ראשי</a>
+        <a href="#">מאמרים</a>
+        <a href="#">יצירת קשר</a>
+    </div>
+
+    <div class="container">
+        <h1>מזונות שמרפאים את העיכול אחרי גיל 45</h1>
+
+        <div class="hero-box" id="heroWrapper">
+            <img src="" id="mainImage">
+        </div>
+
+        <div class="intro">👋 שלום לך ולבטן שלך! את מרגישה שנפיחות וגזים הפכו לחלק משגרת חייך מעל גיל 45? אני כאן כדי לעזור לך לרפא את העיכול באופן טבעי.
+</div>
+        
+        <div class="content">
+            <h2 id="למה-העיכול-שלך-השתנה-אחרי-גיל-45">למה העיכול שלך השתנה אחרי גיל 45?</h2>
+<p>4 שינויים מרכזיים משפיעים על מערכת העיכול אחרי גיל 45:</p>
+<p>✦ <strong>ירידה בייצור אנזימי עיכול</strong> - פחות חומצת קיבה ופחות אנזימים משפיעים על פירוק המזון.</p>
+<p>✦ <strong>האטה במערכת העיכול</strong> - התנועתיות של המעיים איטית יותר, מה שמביא לאי נוחות.</p>
+<p>✦ <strong>שינויים הורמונליים</strong> - משפיעים על חיידקי המעיים ועל התפקוד הכללי של המערכת.</p>
+<p>✦ <strong>רגישות מוגברת</strong> - מזונות שפעם לא הפריעו יכול להיות שגורמים עכשיו לאי נוחות.</p>
+<h2 id="❌-מזונות-שהורסים-את-העיכול-שלך">❌ מזונות שהורסים את העיכול שלך</h2>
+<ul>
+<li>ירקות גולמיים וקשים כמו ברוקולי גולמי וכרובית גולמית.</li>
+<li>פירות בכמויות גדולות - שייקים עם 3+ פירות יכולים להעמיס על העיכול.</li>
+<li>דגנים מלאים ולחמים - גלוטן וסיבים בלתי מעוכלים.</li>
+<li>קטניות כמו חומוס בכמויות גדולות יכולות לגרום לנפיחות.</li>
+<li>מוצרי חלב עם לקטוז גבוה כמו חלב וגבינות קשות.</li>
+<li>ממתיקים מלאכותיים שמפריעים למיקרוביום.</li>
+</ul>
+<h2 id="✅-מזונות-שמרפאים-ומרגיעים-את-העיכול">✅ מזונות שמרפאים ומרגיעים את העיכול</h2>
+<ul>
+<li><strong>ירקות מבושלים</strong> כמו בטטה מאודה ודלעת קלויה עוזרים בפירוק הסיבים הקשים.</li>
+<li><strong>חלבונים קלים לעיכול</strong> כמו דג לבן וביצים רכות.</li>
+<li><strong>שומנים בריאים</strong> כמו אבוקדו ושמן זית שמפחיתים דלקת.</li>
+<li><strong>דגנים חלופיים</strong> כמו אורז בסמטי ולחם ללא גלוטן.</li>
+<li><strong>משקאות מרפאים</strong> כמו מרק עצמות ותה ג&#39;ינג&#39;ר להרגעת המעי.</li>
+</ul>
+<h2 id="עקרונות-חשובים-להצלחה">עקרונות חשובים להצלחה</h2>
+<p>⏰ <strong>עיתוי:</strong> ארוחות במתחם של 10 שעות (8:00-18:00) והימנעות מאכילה לפני השינה.</p>
+<p>🥄 <strong>איך לאכול:</strong> לעיסה מושלמת ושלווה במהלך האוכל לוקחת 20 שניות לכל ביס.</p>
+<p>💧 <strong>שתייה:</strong> מים חמימים + לימון על בטן ריקה 20 דקות לפני ארוחת הבוקר.</p>
+<h2 id="5-טעויות-להימנע-מהן">5 טעויות להימנע מהן</h2>
+<ol>
+<li><p>&quot;אני אתחיל מחר&quot; → התחילי היום!</p>
+</li>
+<li><p>&quot;אני אעשה בצורה מושלמת&quot; → 80% עקביות עדיפה.</p>
+</li>
+<li><p>&quot;זה לא עובד לי&quot; → תני 3-4 שבועות להתאמה.</p>
+</li>
+<li><p>&quot;אני אוסיף תוספים מהסופר&quot; → מזון קודם!</p>
+</li>
+<li><p>&quot;אני לבד בזה&quot; → חפשי תמיכה.</p>
+</li>
+</ol>
+
+        </div>
+
+        <div class="cta-section" id="ctaWrapper">
+            <span class="cta-text">
+                ✨ הצטרפי להרצאת הוובינר החינמית 'בטן רגועה' ולמדי איך לרפא את העיכול שלך.
+            </span>
+            <a href="https://rivkaholtsberg.co.il/webinar-beyen" id="btn1" class="btn-main">
+                להרשמה לוובינר
+                <span class="btn-icon">&larr;</span>
+            </a>
+        </div>
+
+        <div class="summary-box" id="summaryWrapper">
+            <h3>📝 לסיכום:</h3>
+            <div id="summaryText">
+               - העיכול משתנה אחרי גיל 45.
+- יש מזונות שמרעידים את העיכול.
+- מזונות מבושלים מסייעים בעידון הסיבים הקשים.
+- שומנים בריאים מפחיתים דלקת ומסייעים לעיכול.
+
+            </div>
+        </div>
+        
+        <div class="disclaimer-box">
+            <strong>⚠️ הבהרה חשובה:</strong>
+            המידע המוגש במדריך זה הינו למטרות אינפורמטיביות והעשרה בלבד, ואינו מהווה תחליף לייעוץ רפואי...
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #ccc; font-size: 0.8rem;">
+            © כל הזכויות שמורות לרבקה הולצברג
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // תמונה
+            var img = document.getElementById('mainImage');
+            var imgSrc = img.getAttribute('src');
+            if (imgSrc && imgSrc.includes('http') && imgSrc.length > 15) {
+                document.getElementById('heroWrapper').style.display = 'block';
+            }
+
+            // כפתור
+            var btn1 = document.getElementById('btn1');
+            var link1 = btn1.getAttribute('href');
+            if (link1 && link1.length > 1 && !link1.includes('#')) {
+                document.getElementById('ctaWrapper').style.display = 'block';
+            } else {
+                document.getElementById('ctaWrapper').style.display = 'none';
+            }
+
+            // סיכום
+            var sumTxt = document.getElementById('summaryText').innerText;
+            if (sumTxt.length > 5) {
+                document.getElementById('summaryWrapper').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7 ימים לבטן שטוחה ורגועה - רבקה הולצברג</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* פלטת צבעים מקצועית ונקייה */
-            --primary: #C5922C;       /* זהב */
-            --primary-light: #FFF9EE; /* רקע זהוב בהיר מאוד */
-            --text-dark: #1B4D3E;     /* ירוק עמוק יוקרתי */
-            --text-body: #2C2C2C;     /* שחור-אפור לקריאה */
+            /* פלטה משופרת: זהב רך, ירוק יוקרתי, רקעים נקיים */
+            --primary: #E0AC46;       /* זהב ענברי רך */
+            --primary-dark: #C28E2B;  /* זהב כהה להדגשות */
+            --primary-light: #FFF9EE; /* רקע שמנת עדין */
+            
+            --text-dark: #1B4D3E;     /* ירוק עמוק לכותרות */
+            --text-body: #2C2C2C;     /* שחור-אפור רך לקריאה */
+            
             --bg-page: #FFFFFF;
-            --bg-section: #F9F9F9;
-            --border-radius: 12px;
+            --bg-section: #FAFAFA;
+            
+            --border-radius: 16px;
+            
+            /* צבעי סטטוס */
+            --status-bad: #D32F2F;
+            --status-good: #2E7D32;
         }
 
         * { box-sizing: border-box; }
@@ -25,11 +33,11 @@
             color: var(--text-body);
             margin: 0;
             padding: 0;
-            font-size: 24px;
+            font-size: 20px; /* גודל בסיס נוח */
             line-height: 1.6;
         }
 
-        /* אייקונים נקיים */
+        /* אייקונים כלליים */
         .icon {
             width: 36px;
             height: 36px;
@@ -42,34 +50,31 @@
         }
         
         .icon-inline {
-            width: 28px;
-            height: 28px;
-            margin-left: 10px;
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
             stroke-width: 2.5;
             vertical-align: middle;
             position: relative;
             top: -2px;
+            color: var(--primary);
         }
 
-        /* Header Static */
+        /* Header */
         .header-bar {
             background: var(--bg-page);
             padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             text-align: center;
             position: relative;
             z-index: 100;
         }
         
-        .navbar-links {
-            margin-top: 0;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
         .navbar-links a {
             color: var(--text-dark);
             text-decoration: none;
-            margin: 0 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
             transition: color 0.2s;
         }
         .navbar-links a:hover { color: var(--primary); }
@@ -77,31 +82,31 @@
         /* Hero */
         .hero {
             text-align: center;
-            padding: 70px 20px 50px;
+            padding: 60px 20px 40px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         h1 {
             color: var(--text-dark);
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.2;
             margin-bottom: 25px;
         }
 
         .subtitle {
             color: var(--primary);
-            font-weight: 500;
-            font-size: 1.6rem;
+            font-weight: 700;
+            font-size: 1.5rem;
             margin-bottom: 20px;
             display: block;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .intro-lead {
-            font-size: 1.4rem;
-            color: #555;
+            font-size: 1.3rem;
+            color: #444;
             max-width: 850px;
             margin: 0 auto 60px;
             background: var(--primary-light);
@@ -109,11 +114,12 @@
             border-radius: var(--border-radius);
             border-right: 6px solid var(--primary);
             text-align: right;
+            box-shadow: 0 10px 30px rgba(224, 172, 70, 0.1);
         }
 
         /* Content Layout */
         .content-container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -128,34 +134,21 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 30px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-        
-        .number-circle {
-             background: var(--primary);
-             color: white;
-             width: 50px; 
-             height: 50px;
-             border-radius: 50%;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             font-weight: 700;
-             font-size: 1.6rem;
-             flex-shrink: 0;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
         }
         
         .icon-badge {
             color: var(--primary);
             width: 60px;
             height: 60px;
+            background: var(--primary-light);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
+            border: 2px solid rgba(224, 172, 70, 0.2);
         }
 
         .reason-title {
@@ -167,19 +160,57 @@
         }
 
         .content-block {
-            padding-right: 80px;
-        }
-        
-        .problem-text {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            padding-right: 20px; /* Indent slightly */
         }
 
+        /* עיצוב גריד זמני העיכול (חלק 1) */
+        .digest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .digest-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            border-top: 5px solid var(--primary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            text-align: center;
+        }
+
+        .digest-type {
+            font-weight: 900;
+            color: var(--text-dark);
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .digest-sub {
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .digest-detail {
+            font-size: 1.1rem;
+            color: #444;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        /* קופסאות מידע/פתרון */
         .solution-box {
             background: var(--primary-light);
-            padding: 40px;
+            padding: 35px;
             border-radius: var(--border-radius);
             margin-top: 25px;
+            margin-bottom: 25px;
         }
         
         .solution-title {
@@ -188,6 +219,9 @@
             margin-bottom: 15px;
             display: block;
             font-size: 1.4rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         ul.styled-list {
@@ -195,14 +229,12 @@
             padding: 0;
             margin: 0;
         }
-
         ul.styled-list li {
             position: relative;
             padding-right: 35px;
             margin-bottom: 15px;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
         }
-        
         .list-icon {
             position: absolute;
             right: 0;
@@ -212,72 +244,43 @@
             height: 24px;
         }
 
-        /* Digest Specifics */
-        .digest-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .digest-card {
-            background: #fafafa;
-            padding: 25px;
-            border-radius: 8px;
-            border-top: 4px solid var(--primary);
-        }
-
-        .digest-type {
-            font-weight: 700;
-            color: var(--text-dark);
-            font-size: 1.3rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .digest-detail {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        /* NEW: Improved Foods List Layout (Cards Grid) */
+        /* עיצוב מיוחד לחלק 3 - רשימת המזונות */
         .foods-category {
             margin-bottom: 50px;
         }
         
         .category-name {
-            font-size: 1.5rem;
-            color: var(--primary);
+            font-size: 1.6rem;
+            color: var(--text-dark);
             font-weight: 700;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            display: block;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 5px 20px;
+            border-radius: 20px;
         }
 
         .food-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* כרטיסיות רחבות */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
 
         .food-card {
             background: #fff;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #eee;
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
             overflow: hidden;
         }
         
         .food-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
             border-color: var(--primary-light);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
         }
         
         .food-card::before {
@@ -286,13 +289,13 @@
             right: 0;
             top: 0;
             bottom: 0;
-            width: 5px;
+            width: 6px;
             background: var(--primary);
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .food-name {
-            font-weight: 700;
+            font-weight: 900;
             font-size: 1.3rem;
             color: var(--text-dark);
             display: block;
@@ -302,30 +305,30 @@
         .info-row {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 1.1rem;
             line-height: 1.4;
         }
         
         .info-icon {
             flex-shrink: 0;
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             margin-left: 10px;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
-        .prob-text { color: #d32f2f; }
-        .sol-text { color: #2e7d32; font-weight: 500; }
+        .prob-text { color: var(--status-bad); }
+        .sol-text { color: var(--status-good); font-weight: 700; }
 
-        /* CTA Section Improved */
+        /* CTA Section */
         .cta-wrapper {
             background: var(--text-dark);
             color: white;
             text-align: center;
-            padding: 80px 40px;
+            padding: 80px 20px;
             margin-top: 100px;
-            border-radius: 0;
+            border-radius: var(--border-radius);
         }
 
         .cta-content {
@@ -343,7 +346,7 @@
         
         .cta-list li {
             font-size: 1.3rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             position: relative;
             padding-right: 40px;
             color: #EBDbb3;
@@ -352,7 +355,7 @@
         .cta-icon {
             position: absolute;
             right: 0;
-            top: 3px;
+            top: 4px;
             color: var(--primary);
             width: 28px;
             height: 28px;
@@ -367,47 +370,49 @@
             color: white;
             font-size: 1.5rem;
             font-weight: 700;
-            padding: 25px 60px;
+            padding: 20px 50px;
             border-radius: 60px;
             text-decoration: none;
             transition: transform 0.2s, background 0.2s;
             margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         .btn:hover {
-            background-color: #b08123;
+            background-color: var(--primary-dark);
             transform: translateY(-3px);
         }
-        
+
         /* Summary */
         .summary-box {
             background: #fafafa;
             padding: 50px;
-            margin-top: 80px;
+            margin: 80px auto;
+            max-width: 800px;
             text-align: center;
-            border-top: 1px solid #eee;
+            border-radius: var(--border-radius);
+            border: 2px solid #eee;
         }
 
         .footer {
             text-align: center;
-            padding: 50px;
+            padding: 40px;
             font-size: 1rem;
-            color: #888;
-            background: #f5f5f5;
+            color: #777;
+            background: #f8f8f8;
+            margin-top: 50px;
         }
 
         @media (max-width: 768px) {
-            body { font-size: 20px; }
-            h1 { font-size: 2.4rem; }
+            body { font-size: 18px; }
+            h1 { font-size: 2.2rem; }
             .content-block { padding-right: 0; }
-            .card-header { flex-direction: column; text-align: center; gap: 15px; }
-            .reason-title { font-size: 1.8rem; }
-            .intro-lead { padding: 25px; text-align: right; }
-            .solution-box { padding: 25px; }
-            .digest-grid { grid-template-columns: 1fr; }
-            .food-grid { grid-template-columns: 1fr; }
-            .cta-wrapper { padding: 60px 20px; }
+            .card-header { flex-direction: column; text-align: center; gap: 15px; align-items: center; }
+            .reason-title { font-size: 1.7rem; text-align: center; }
+            .intro-lead { padding: 30px; text-align: right; }
+            .digest-grid, .food-grid { grid-template-columns: 1fr; }
+            .btn { width: 100%; padding: 20px; font-size: 1.3rem; white-space: normal; height: auto; text-align: center;}
+            .cta-content h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -415,7 +420,7 @@
 
     <div class="header-bar">
         <div class="navbar-links">
-            <a href="https://rivkaholtsberg.co.il/blog-health/">דף הבית</a>
+            <a href="#">דף הבית</a>
         </div>
     </div>
 
@@ -429,12 +434,11 @@
             אם את קוראת את המדריך הזה, סביר להניח שכבר ניסית הכל: ויתרת על גלוטן, חלב, סוכר, ואולי אפילו על חיטה ושיפון. אבל הנפיחות? היא עדיין פה.<br><br>
             הסיבה פשוטה: הבעיה היא לא רק מה את אוכלת - אלא איך ומתי את אוכלת, ובעיקר - איך את משלבת את המזונות.<br><br>
             <strong>במדריך הזה תלמדי:</strong>
-            <ul style="margin-top:10px; padding-right:20px;">
-                <li><svg class="icon-inline" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> את עקרון שילובי המזון הנכונים שמפחיתים נפיחות ב-70%</li>
-                <li><svg class="icon-inline" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> רשימה של 15 מזונות "בריאים" שגורמים לנפיחות נסתרת</li>
-                <li><svg class="icon-inline" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> טיפים מעשיים שתוכלי ליישם כבר היום</li>
+            <ul style="margin-top:15px; padding-right:20px; list-style:none;">
+                <li style="margin-bottom:10px;"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> את עקרון שילובי המזון הנכונים שמפחיתים נפיחות ב-70%</li>
+                <li style="margin-bottom:10px;"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> רשימה של 15 מזונות "בריאים" שגורמים לנפיחות נסתרת</li>
+                <li><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg> טיפים מעשיים שתוכלי ליישם כבר היום</li>
             </ul>
-            <br>בואי נתחיל!
         </div>
     </div>
 
@@ -450,39 +454,36 @@
             </div>
             
             <div class="content-block">
-                <p style="margin-bottom:20px;">כל סוג מזון דורש תנאים שונים לעיכול:</p>
+                <p style="margin-bottom:30px;">כל סוג מזון דורש תנאים שונים לעיכול בקיבה:</p>
                 
                 <div class="digest-grid">
                     <div class="digest-card">
                         <span class="digest-type">חלבונים</span>
-                        <span style="font-size:0.9rem; color:#888;">בשר, עוף, דגים, ביצים, קטניות</span>
-                        <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
-                        <span class="digest-detail">דורשים סביבה חומצית בקיבה</span>
+                        <span class="digest-sub">בשר, עוף, דגים, ביצים, קטניות</span>
+                        <span class="digest-detail">דורשים סביבה חומצית</span>
                         <span class="digest-detail">זמן עיכול: 3-4 שעות</span>
                     </div>
                     
                     <div class="digest-card">
                         <span class="digest-type">עמילנים</span>
-                        <span style="font-size:0.9rem; color:#888;">אורז, תפוח"א, לחם, פסטה</span>
-                        <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
-                        <span class="digest-detail">דורשים סביבה בסיסית/נייטרלית</span>
+                        <span class="digest-sub">אורז, תפוח"א, לחם, פסטה</span>
+                        <span class="digest-detail">דורשים סביבה בסיסית</span>
                         <span class="digest-detail">זמן עיכול: 2-3 שעות</span>
                     </div>
                     
                     <div class="digest-card">
                         <span class="digest-type">פירות</span>
-                        <span style="font-size:0.9rem; color:#888;">כל סוגי הפירות</span>
-                        <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+                        <span class="digest-sub">כל סוגי הפירות</span>
                         <span class="digest-detail">דורשים סביבה בסיסית</span>
                         <span class="digest-detail">זמן עיכול: 20-40 דקות</span>
                     </div>
                 </div>
 
-                <div class="solution-box" style="background:#fff5f5; border:1px solid #ffdcdc;">
-                    <strong style="color:#d32f2f;">מה קורה כשמשלבים לא נכון?</strong><br>
+                <div class="solution-box" style="background:#fff5f5; border:1px solid #ffcdd2;">
+                    <strong style="color:var(--status-bad); font-size:1.3rem; display:block; margin-bottom:10px;">מה קורה כשמשלבים לא נכון?</strong>
                     כשאת אוכלת חלבון + עמילן באותה ארוחה (למשל: עוף + אורז), הקיבה נכנסת ל"בלבול":
-                    היא לא יודעה האם להפריש חומצה (לחלבון) או להישאר נייטרלית (לעמילן).<br>
-                    התוצאה: העיכול מואט באופן דרמטי, המזון מתחיל להתסס במעיים, והנפיחות והגזים מתחילים.
+                    היא לא יודעת האם להפריש חומצה (לחלבון) או להישאר נייטרלית (לעמילן).<br><br>
+                    <strong>התוצאה:</strong> העיכול מואט באופן דרמטי, המזון מתחיל להתסס במעיים, והנפיחות והגזים מתחילים.
                 </div>
             </div>
         </div>
@@ -500,8 +501,8 @@
                 <!-- כלל 1 -->
                 <div class="solution-box">
                     <span class="solution-title">כלל 1: חלבון + ירקות</span>
-                    <p><strong>מותר לשלב:</strong> בשר/עוף/דגים + סלט ירוק גדול, ביצים + ירקות מאודים, גבינה + מלפפון/עגבניה, קטניות + ירקות (ללא עמילן).</p>
-                    <p><strong>דוגמאות לארוחות:</strong></p>
+                    <p><strong>השילוב המנצח:</strong> בשר/עוף/דגים + סלט ירוק גדול, ביצים + ירקות מאודים, גבינה + מלפפון/עגבניה.</p>
+                    <p style="margin-top:15px; font-weight:700;">דוגמאות לארוחות:</p>
                     <ul class="styled-list">
                         <li><svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> חזה עוף צלוי + סלט ירקות עלים + אבוקדו</li>
                         <li><svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> סלמון בתנור + ברוקולי מאודה + כרובית</li>
@@ -512,247 +513,185 @@
                 <!-- כלל 2 -->
                 <div class="solution-box">
                     <span class="solution-title">כלל 2: עמילן + ירקות</span>
-                    <p><strong>מותר לשלב:</strong> אורז/קינואה + ירקות מבושלים, תפוח אדמה + סלט, לחם + חומוס + ירקות, פסטה + רוטב עגבניות וירקות.</p>
-                    <p><strong>דוגמאות לארוחות:</strong></p>
+                    <p><strong>השילוב המנצח:</strong> אורז/קינואה + ירקות מבושלים, תפוח אדמה + סלט, לחם + ממרח צמחי.</p>
+                    <p style="margin-top:15px; font-weight:700;">דוגמאות לארוחות:</p>
                     <ul class="styled-list">
                         <li><svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> אורז מלא + ירקות מוקפצים בשמן זית</li>
                         <li><svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> תפוח אדמה אפוי + סלט ירוק גדול</li>
-                        <li><svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> קינואה + חצילים וקישואים בתנור</li>
+                        <li><svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> מרק עדשים סמיך (ללא בשר)</li>
                     </ul>
                 </div>
 
                 <!-- כלל 3 -->
-                <div class="solution-box" style="background: #fffde7; border: 1px solid #fff9c4;">
-                    <span class="solution-title">כלל 3: פירות - תמיד לבד!</span>
-                    <p><strong>חשוב מאוד:</strong> פירות מתעכלים תוך 20-40 דקות. כל מזון אחר מאט את העיכול שלהם.</p>
-                    <p><strong>איך לאכול פירות נכון:</strong> על קיבה ריקה (בבוקר/בין הארוחות), לפחות 30 דקות לפני ארוחה או 2-3 שעות אחרי ארוחה.</p>
-                </div>
-
-                <!-- כלל 4 -->
-                <div class="solution-box" style="background: #fff5f5; border: 1px solid #ffdcdc;">
-                    <span class="solution-title" style="color:#d32f2f;">כלל 4: מה לא לשלב</span>
-                    <ul class="styled-list">
-                        <li><svg class="list-icon" style="color:#d32f2f;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> חלבון + עמילן (בשר + אורז)</li>
-                        <li><svg class="list-icon" style="color:#d32f2f;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> חלבון + פירות (יוגורט + בננה)</li>
-                        <li><svg class="list-icon" style="color:#d32f2f;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> עמילן + פירות (קורנפלקס + בננה)</li>
-                    </ul>
+                <div class="solution-box" style="background: #fffde7; border: 1px solid #fff59d;">
+                    <span class="solution-title" style="border-color:#fbc02d;">כלל 3: פירות - תמיד לבד!</span>
+                    <p>פירות מתעכלים מהר מאוד. אם תאכלי אותם יחד עם מזון שמתעכל לאט (כמו לחם או בשר), הפירות ייתקעו בקיבה ויתססו.</p>
+                    <p><strong>מתי לאכול פירות?</strong> על קיבה ריקה בבוקר, או כארוחת ביניים (3 שעות אחרי ארוחה).</p>
                 </div>
             </div>
         </div>
 
-        <!-- חלק 3 - מעוצב מחדש ככרטיסיות -->
+        <!-- חלק 3 - רשימת המזונות -->
         <div class="reason-card">
             <div class="card-header">
                 <div class="icon-badge">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                 </div>
-                <h2 class="reason-title">חלק 3: 15 מזונות "בריאים" שגורמים לנפיחות נסתרת</h2>
+                <h2 class="reason-title">חלק 3: 15 מזונות "בריאים" שגורמים לנפיחות</h2>
             </div>
             
-            <p style="margin-bottom:30px;">רבים מהמזונות הבאים נחשבים בריאים, אבל עלולים לגרום לנפיחות אצל נשים עם מערכת עיכול רגישה:</p>
+            <div class="content-block">
+                
+                <!-- קטגוריה: צמחיים -->
+                <div class="foods-category">
+                    <span class="category-name">ירקות ופירות בעייתיים</span>
+                    <div class="food-grid">
+                        <div class="food-card">
+                            <span class="food-name">כרובית וברוקולי גולמיים</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>מכילים סוכרים קשים לעיכול</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">לאכול מבושלים/מאודים</span>
+                            </div>
+                        </div>
 
-            <!-- מזונות צמחיים -->
-            <div class="foods-category">
-                <span class="category-name">מזונות צמחיים</span>
-                <div class="food-grid">
-                    <div class="food-card">
-                        <span class="food-name">כרובית וברוקולי גולמיים</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילים סוכרים מורכבים שקשים לעיכול</span>
+                        <div class="food-card">
+                            <span class="food-name">בצל ושום גולמיים</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>מכילים פרוקטנים שיוצרים גזים</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">לבשל היטב או להפחית</span>
+                            </div>
                         </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">לאכול מבושלים/מאודים</span>
-                        </div>
-                    </div>
 
-                    <div class="food-card">
-                        <span class="food-name">בצל ושום גולמיים</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילים פרוקטנים (סוכרים) שגורמים לגזים</span>
+                        <div class="food-card">
+                            <span class="food-name">תפוחים גולמיים</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>מכילים סורביטול (סוכר בעייתי)</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">לאכול אפויים או בכמות קטנה</span>
+                            </div>
                         </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">לבשל או להימנע</span>
-                        </div>
-                    </div>
-
-                    <div class="food-card">
-                        <span class="food-name">קטניות ללא השרייה</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילות חומרים שמעכבים עיכול</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">להשרות 12-24 שעות לפני הבישול</span>
-                        </div>
-                    </div>
-
-                    <div class="food-card">
-                        <span class="food-name">תפוחים גולמיים</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילים סורביטול שקשה לעיכול</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">לאכול מבושלים/בכמות קטנה</span>
-                        </div>
-                    </div>
-
-                    <div class="food-card">
-                        <span class="food-name">פטריות גולמיות</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">קשות מאוד לעיכול</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">תמיד לבשל</span>
+                        
+                        <div class="food-card">
+                            <span class="food-name">פטריות גולמיות</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>סיבים קשים מאוד לעיכול</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">תמיד להקפיץ או לבשל</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- דגנים -->
-            <div class="foods-category">
-                <span class="category-name">דגנים ופחמימות</span>
-                <div class="food-grid">
-                    <div class="food-card">
-                        <span class="food-name">לחם מלא עם שמרים</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">השמרים גורמים לתסיסה</span>
+                <!-- קטגוריה: דגנים -->
+                <div class="foods-category">
+                    <span class="category-name">דגנים ופחמימות</span>
+                    <div class="food-grid">
+                        <div class="food-card">
+                            <span class="food-name">לחם מלא עם שמרים</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>השמרים גורמים לתסיסה בבטן</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">לחם מחמצת (שאור) איכותי</span>
+                            </div>
                         </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">לחם משמר חמצת / פיתות ללא שמרים</span>
-                        </div>
-                    </div>
 
-                    <div class="food-card">
-                        <span class="food-name">שיבולת שועל גולמית</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">קשות לעיכול בצורה גולמית</span>
+                        <div class="food-card">
+                            <span class="food-name">שיבולת שועל לא מבושלת</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>קשה לפירוק בצורה יבשה</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">להשרות בלילה או לבשל דייסה</span>
+                            </div>
                         </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">להשרות בלילה או לבשל</span>
-                        </div>
-                    </div>
 
-                    <div class="food-card">
-                        <span class="food-name">אורז מלא לא מושרה</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכיל חומצה פיטית שמקשה על העיכול</span>
+                        <div class="food-card">
+                            <span class="food-name">אורז מלא (ללא השרייה)</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>מכיל חומצה פיטית המעכבת עיכול</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">להשרות 6-8 שעות לפני הבישול</span>
+                            </div>
                         </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">להשרות 6-8 שעות</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- חלבונים -->
-            <div class="foods-category">
-                <span class="category-name">חלבונים ומוצרי חלב</span>
-                <div class="food-grid">
-                    <div class="food-card">
-                        <span class="food-name">ביצים קשות</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">קשות יותר לעיכול מביצים רכות</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">ביצים רכות / עין / חביתה</span>
-                        </div>
-                    </div>
-
-                    <div class="food-card">
-                        <span class="food-name">חלב ומוצרי חלב</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">רגישות נפוצה ללקטוז</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">גבינות מותססות או תחליפים</span>
+                        
+                        <div class="food-card">
+                            <span class="food-name">מזונות "ללא גלוטן"</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>מלאים במייצבים ומסטיקים תעשייתיים</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">מזון טבעי ללא גלוטן (אורז, כוסמת)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                
+                 <!-- קטגוריה: מעובדים -->
+                 <div class="foods-category">
+                    <span class="category-name">מעובדים ומשקאות</span>
+                    <div class="food-grid">
+                        <div class="food-card">
+                            <span class="food-name">מים מוגזים וסודה</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>הגז נכנס ישירות למערכת העיכול</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">מים רגילים בטמפרטורת החדר</span>
+                            </div>
+                        </div>
 
-            <!-- מעובדים ומשקאות -->
-            <div class="foods-category">
-                <span class="category-name">מזונות מעובדים ומשקאות</span>
-                <div class="food-grid">
-                    <div class="food-card">
-                        <span class="food-name">חטיפי חלבון/אנרגיה</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילים סיבים תעשייתיים וממתיקים</span>
+                        <div class="food-card">
+                            <span class="food-name">ממתיקים מלאכותיים</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>גורמים לנפיחות ושלשולים</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">סטיביה או כמויות קטנות של דבש</span>
+                            </div>
                         </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">חטיפים טבעיים (אגוזים, פירות)</span>
-                        </div>
-                    </div>
 
-                    <div class="food-card">
-                        <span class="food-name">ממתיקים מלאכותיים</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילים פוליאולים שגורמים לנפיחות</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">סטיביה/דבש בכמויות קטנות</span>
-                        </div>
-                    </div>
-
-                    <div class="food-card">
-                        <span class="food-name">מזונות "ללא גלוטן"</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילים מסטיקים וחומרי גיבוש</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">מזונות טבעיים ללא גלוטן</span>
-                        </div>
-                    </div>
-
-                    <div class="food-card">
-                        <span class="food-name">מים מוגזים</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">הגז גורם לנפיחות ישירה</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">מים רגילים בטמפרטורת החדר</span>
-                        </div>
-                    </div>
-
-                    <div class="food-card">
-                        <span class="food-name">משקאות חלבון</span>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#d32f2f;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            <span class="prob-text">מכילים לקטוז וממתיקים</span>
-                        </div>
-                        <div class="info-row">
-                            <svg class="info-icon" style="color:#2e7d32;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span class="sol-text">סמוזי ביתי ממזונות טבעיים</span>
+                        <div class="food-card">
+                            <span class="food-name">חטיפי חלבון</span>
+                            <div class="info-row">
+                                <svg class="info-icon prob-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                <span>מכילים חלבונים מעובדים וסיבים סינתטיים</span>
+                            </div>
+                            <div class="info-row">
+                                <svg class="info-icon sol-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="sol-text">אגוזים ופרי טבעי</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -762,33 +701,40 @@
                 <div class="icon-badge">
                     <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 </div>
-                <h2 class="section-title">חלק 4: טיפים נוספים להצלחה</h2>
+                <h2 class="reason-title">חלק 4: טיפים נוספים להצלחה</h2>
             </div>
             
-            <div class="solution-box" style="background:#fff;">
+            <div class="solution-box" style="background: white; border: 2px solid var(--primary-light);">
                 <ul class="styled-list">
                     <li>
-                        <strong>1. טכניקת הנשימה לפני אכילה:</strong> לפני כל ארוחה, עשי 5 נשימות עמוקות. זה מעביר את הגוף ממצב "קרב או בריחה" למצב "מנוחה ועיכול".
+                        <strong>נשימה לפני האוכל:</strong><br>
+                        לפני כל ארוחה, בצעי 5 נשימות עמוקות. זה מעביר את הגוף ממצב "לחץ" למצב "עיכול".
                     </li>
                     <li>
-                        <strong>2. תזמון הארוחות:</strong> לפחות 4-5 שעות בין ארוחות עיקריות. ארוחה אחרונה 3 שעות לפני השינה.
+                        <strong>תזמון הארוחות:</strong><br>
+                        הקפידי על רווח של 4-5 שעות בין ארוחות עיקריות. סיימי לאכול 3 שעות לפני השינה.
                     </li>
                     <li>
-                        <strong>3. הוספת אנזימי עיכול טבעיים:</strong> פפאיה (פפאין), אננס (ברומלין), לימון, חומץ תפוחים.
+                        <strong>עזרי עיכול טבעיים:</strong><br>
+                        שלבי בתפריט לימון, חומץ תפוחים (במים), או פירות כמו פפאיה ואננס המכילים אנזימים.
                     </li>
                     <li>
-                        <strong>4. תוספי מזון:</strong> פרוביוטיקה איכותית, אנזימי עיכול (אם העיכול איטי), מגנזיום.
+                        <strong>תוספים מומלצים:</strong><br>
+                        פרוביוטיקה איכותית ומגנזיום יכולים לסייע מאוד בהסדרת העיכול.
                     </li>
                 </ul>
             </div>
         </div>
 
-        <!-- חלק 6 (סיכום) -->
+        <!-- חלק 5 (סיכום) -->
         <div class="summary-box">
-            <h3>חלק 6: מה הלאה?</h3>
-            <p><strong>ראית תוצאות? מעולה!</strong><br>
-            אם את מרגישה שהבטן יותר שטוחה, יש לך פחות נפיחות וגזים, ואת מרגישה קלה יותר - זהו רק ההתחלה! המדריך הזה נתן לך את היסודות, אבל יש עוד המון לגלות: איך לטפל בנפיחות כרונית, מה לעשות במקרה של עצירות/שלשולים, וזיהוי רגישויות.</p>
-            <p style="margin-top:20px; font-style:italic;">"את עדיין מתקשה? זה בסדר גמור. לפעמים צריך התאמה אישית - כל אישה היא עולם ומלואו."</p>
+            <h3 style="font-size:1.8rem; margin-top:0; color:var(--text-dark);">חלק 5: מה הלאה?</h3>
+            <p style="font-size:1.2rem;">
+                <strong>ראית תוצאות? מעולה!</strong><br>
+                אם את מרגישה שהבטן יותר שטוחה ורגועה, זה רק ההתחלה.<br>
+                המדריך הזה נתן לך את היסודות, אבל יש עוד המון לגלות על הקשבה לגוף, זיהוי רגישויות וטיפול בנפיחות כרונית.
+            </p>
+            <p style="margin-top:20px; font-weight:700; color:var(--primary);">"את עדיין מתקשה? זה בסדר גמור. לפעמים צריך התאמה אישית - כל אישה היא עולם ומלואו."</p>
         </div>
 
     </div>
@@ -796,28 +742,29 @@
     <!-- CTA Section -->
     <div class="cta-wrapper">
         <div class="cta-content">
-            <h2 style="color: #EBDbb3; margin-top:0; font-size: 2.2rem; margin-bottom: 25px;">🎁 המתנה שלי אליך</h2>
+            <h2 style="color: #F0E6D2; margin-top:0; font-size: 2.4rem; margin-bottom: 25px;">🎁 המתנה שלי אליך</h2>
             <p style="font-size: 1.5rem; margin-bottom: 30px;">
-                רוצה ללמוד את השיטה המלאה שלי לבטן רגועה ומערכת עיכול מאוזנת?<br>
+                רוצה ללמוד את השיטה המלאה שלי לבטן רגועה?<br>
                 אני מזמינה אותך לוובינר חינמי <strong>"בטן רגועה"</strong> שבו:
             </p>
             
             <ul class="cta-list">
                 <li>
                     <svg class="cta-icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"></path></svg>
-                    תגלי את 3 הטעויות הכי גדולות שגורמות לנפיחות
+                    תגלי את 3 הטעויות הגדולות שגורמות לנפיחות
                 </li>
                 <li>
                     <svg class="cta-icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"></path></svg>
-                    תלמדי את הפרוטוקול המלא שלי לאיפוס מערכת העיכול
+                    תלמדי את הפרוטוקול המלא לאיפוס מערכת העיכול
                 </li>
                 <li>
                     <svg class="cta-icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"></path></svg>
-                    תקבלי כלים מעשיים שאפשר ליישם מיד
+                    תקבלי כלים מעשיים ליישום מיידי
                 </li>
             </ul>
             
-            <a href="https://rivkaholtsberg.co.il/webinar-beyen" class="btn">
+            <br>
+            <a href="#" class="btn">
                 להרשמה לוובינר החינמי
                 <svg style="width:28px; height:28px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </a>
@@ -825,9 +772,9 @@
     </div>
 
     <div class="footer">
-        <p style="margin-bottom: 10px; font-weight: 700; color: var(--primary);">בהצלחה במסע שלך לבטן רגועה!</p>
-        <p>רבקה הולצברג מאמנת בריאות טבעית</p>
-        <p style="font-size: 0.9rem; margin-top: 20px;">נ.ב. אם המדריך עזר לך - אשמח לשמוע! שלחי לי הודעה ושתפי את החוויה שלך.</p>
+        <p style="margin-bottom: 10px; font-weight: 700; color: var(--primary); font-size:1.2rem;">בהצלחה במסע שלך לבטן רגועה!</p>
+        <p>רבקה הולצברג - מאמנת בריאות טבעית</p>
+        <p style="font-size: 0.9rem; margin-top: 20px;">כל הזכויות שמורות ©</p>
     </div>
 
 </body>

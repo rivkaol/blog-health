@@ -8,18 +8,76 @@
     <style>
         :root { --primary-green: #1B4D3E; --accent-gold: #D4AF37; --bg-cream: #F8F9FA; --text-dark: #333333; --white-glass: rgba(255, 255, 255, 0.95); }
         body { font-family: 'Rubik', sans-serif; background-color: var(--bg-cream); color: var(--text-dark); margin: 0; padding: 0; line-height: 1.6; }
+        
+        /* Navbar & Hero */
         .navbar { background: var(--white-glass); backdrop-filter: blur(10px); padding: 20px 0; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(27, 77, 62, 0.1); }
         .navbar .brand { font-weight: 900; color: var(--primary-green); font-size: 1.5rem; letter-spacing: -0.5px; }
-        .hero { text-align: center; padding: 80px 20px 60px; }
+        .hero { text-align: center; padding: 60px 20px 40px; }
         .hero h1 { font-size: 3.5rem; color: var(--primary-green); font-weight: 700; margin-bottom: 15px; line-height: 1.1; }
         .hero p { font-size: 1.3rem; color: var(--text-dark); font-weight: 300; max-width: 600px; margin: 0 auto; }
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        /* --- עיצוב הפרומו סטריפ (החדש והנקי) --- */
+        .promo-strip {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-right: 5px solid var(--primary-green); /* פס ירוק בצד */
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 60px; /* רווח לפני המאמרים */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* התאמה למחשב - שורה אחת */
+        @media (min-width: 768px) {
+            .promo-strip { 
+                flex-direction: row; 
+                text-align: right; 
+                justify-content: space-between; 
+                padding: 35px 45px;
+            }
+            .promo-content { max-width: 70%; }
+            .promo-action { flex-shrink: 0; }
+        }
+
+        .promo-tag {
+            background: #FFF9EE; color: var(--accent-gold); font-weight: 700; font-size: 0.85rem;
+            padding: 4px 12px; border-radius: 4px; display: inline-block; margin-bottom: 10px;
+        }
+        .promo-title { font-size: 1.6rem; font-weight: 700; color: var(--primary-green); margin: 0 0 10px 0; line-height: 1.2; }
+        .promo-desc { font-size: 1.1rem; color: #555; margin: 0; line-height: 1.5; }
+        
+        /* כפתור נקי וירוק */
+        .action-btn {
+            background-color: var(--primary-green);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 14px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(27, 77, 62, 0.2);
+        }
+        .action-btn:hover { background-color: #143d30; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27, 77, 62, 0.3); }
+
+        /* --- עיצוב הגריד והכרטיסיות --- */
+        .section-header { font-size: 1.5rem; color: var(--text-dark); font-weight: 700; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; opacity: 0.9; }
+        .section-header::after { content: ''; flex-grow: 1; height: 1px; background: #e0e0e0; }
+
         .posts-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
             gap: 30px; 
             align-items: stretch;
         }
+        
         .post-card { 
             background: var(--white-glass); 
             border: 1px solid rgba(255, 255, 255, 0.5); 
@@ -29,7 +87,7 @@
             color: inherit; 
             display: flex; 
             flex-direction: column; 
-            justify-content: space-between; /* זה מיישר את הכפתור לתחתית */
+            justify-content: space-between; 
             transition: all 0.4s ease; 
             box-shadow: 0 10px 30px rgba(27, 77, 62, 0.05); 
             height: 100%; 
@@ -40,23 +98,16 @@
         .tag { font-size: 0.8rem; color: var(--accent-gold); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
         h3 { color: var(--primary-green); font-size: 1.6rem; margin: 0 0 15px 0; font-weight: 700; line-height: 1.3; }
         p { font-size: 1.05rem; color: var(--text-dark); font-weight: 300; margin-bottom: 30px; }
+        
         .read-more-btn { 
-            color: var(--primary-green); 
-            font-weight: 700; 
-            font-size: 1.1rem; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px; 
-            transition: gap 0.3s; 
-            margin-top: auto; 
+            color: var(--primary-green); font-weight: 700; font-size: 1.1rem; 
+            display: inline-flex; align-items: center; gap: 10px; 
+            transition: gap 0.3s; margin-top: auto; 
         }
-        /* כאן התיקון לחץ הענק! */
-        .read-more-btn svg { 
-            width: 24px !important; 
-            height: 24px !important; 
-            stroke-width: 2px;
-        }
+        /* תיקון החץ */
+        .read-more-btn svg { width: 24px !important; height: 24px !important; stroke-width: 2px; }
         .post-card:hover .read-more-btn { gap: 15px; color: var(--accent-gold); }
+        
         .footer { text-align: center; padding: 60px 20px; color: var(--primary-green); font-size: 0.9rem; opacity: 0.7; margin-top: 40px; }
         @media (max-width: 600px) { .hero h1 { font-size: 2.5rem; } .container { padding: 20px; } }
     </style>
@@ -68,49 +119,74 @@
         <p>ידע מקצועי, כלים מעשיים ושקט נפשי.</p>
     </div>
     <div class="container">
+        
+        <div class="promo-strip">
+            <div class="promo-content">
+                <span class="promo-tag">הדרכה במתנה</span>
+                <h2 class="promo-title">למה כוח הרצון נגמר לך בדיוק כשאת צריכה אותו?</h2>
+                <p class="promo-desc">
+                    במקום להתחיל בשיא הכוח ולהישחק, גלי איך לעבור ל"התמדה חכמה"
+                    ולבנות הרגלים יציבים שמחזיקים מעמד.
+                </p>
+            </div>
+            <div class="promo-action">
+                <a href="https://rivkaholtsberg.co.il/webhergel/" class="action-btn">אני רוצה לצפות בהדרכה</a>
+            </div>
+        </div>
+
+        <div class="section-header">פוסטים ומדריכים אחרונים</div>
+
         <div class="posts-grid">
-<a href="guides/iku.html" class="post-card">
-    <div class="card-content">
-        <div class="tag">מדריך חדש</div>
-        <h3 class="card-title">3 צעדים להקלה על מערכת העיכול</h3>
-        <p class="card-excerpt">הפחיתו מזונות מכבידים ותחוו הקלה מידית.</p>
-        <div class="read-more-btn">
-            קראי עוד
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            
+            <a href="guides/iku.html" class="post-card">
+                <div class="card-content">
+                    <div class="tag">מדריך חדש</div>
+                    <h3 class="card-title">3 צעדים להקלה על מערכת העיכול</h3>
+                    <p class="card-excerpt">הפחיתו מזונות מכבידים ותחוו הקלה מידית.</p>
+                    <div class="read-more-btn">
+                        קראי עוד
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="guides/mazon.html" class="post-card">
+                <div class="card-content">
+                    <div class="tag">מדריך חדש</div>
+                    <h3 class="card-title">מדריך מיוחד לנשים מעל גיל 45</h3>
+                    <p class="card-excerpt">גילי 45 ומעלה? הפתרון לנפיחות בבטן כאן.</p>
+                    <div class="read-more-btn">
+                        קראי עוד
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="guides/sevenn.html" class="post-card">
+                <div class="card-content">
+                    <div class="tag">מדריך חדש</div>
+                    <h3 class="card-title">7 ימים לבטן שטוחה ורגועה והפרוטוקול שישנה את העיכול שלך</h3>
+                    <p class="card-excerpt">פשוט ומהפכני: סודות לעיכול מושלם ולתחושה קלה.</p>
+                    <div class="read-more-btn">
+                        קראי עוד
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="guides/nficcc.html" class="post-card">
+                <div class="card-content">
+                    <div class="tag">מדריך חדש</div>
+                    <h3 class="card-title">5 הסיבות הנסתרות לנפיחות לאחר אכילה (ואיך לפתור אותן)</h3>
+                    <p class="card-excerpt">גלה את הגורמים המפתיעים לנפיחות בטן לאחר ארוחה.</p>
+                    <div class="read-more-btn">
+                        קראי עוד
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </div>
+                </div>
+            </a>
+
         </div>
-    </div>
-</a><a href="guides/mazon.html" class="post-card">
-    <div class="card-content">
-        <div class="tag">מדריך חדש</div>
-        <h3 class="card-title">מדריך מיוחד לנשים מעל גיל 45</h3>
-        <p class="card-excerpt">גילי 45 ומעלה? הפתרון לנפיחות בבטן כאן.</p>
-        <div class="read-more-btn">
-            קראי עוד
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        </div>
-    </div>
-</a><a href="guides/sevenn.html" class="post-card">
-    <div class="card-content">
-        <div class="tag">מדריך חדש</div>
-        <h3 class="card-title">7 ימים לבטן שטוחה ורגועה והפרוטוקול שישנה את העיכול שלך</h3>
-        <p class="card-excerpt">פשוט ומהפכני: סודות לעיכול מושלם ולתחושה קלה.</p>
-        <div class="read-more-btn">
-            קראי עוד
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        </div>
-    </div>
-</a><a href="guides/nficcc.html" class="post-card">
-    <div class="card-content">
-        <div class="tag">מדריך חדש</div>
-        <h3 class="card-title">5 הסיבות הנסתרות לנפיחות לאחר אכילה (ואיך לפתור אותן)</h3>
-        <p class="card-excerpt">גלה את הגורמים המפתיעים לנפיחות בטן לאחר ארוחה.</p>
-        <div class="read-more-btn">
-            קראי עוד
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        </div>
-    </div>
-</a>
-</div>
     </div>
     <div class="footer">© כל הזכויות שמורות לרבקה הולצברג</div>
 </body>

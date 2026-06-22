@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>המדריך המלא: כולסטרול מחומצן והסכנה האמיתית ללב</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#173a32;
+    --pine-soft:#244d44;
+    --honey:#bf7a2a;
+    --amber:#e0a64a;
+    --sage:#eef3ee;
+    --sage-deep:#dfe9df;
+    --paper:#fffdf9;
+    --ink:#26261f;
+    --ink-soft:#5a5a4f;
+    --wa:#25D366;
+    --wa-dark:#1da851;
+    --line:#e4ded2;
+    --rust:#b14a30;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Assistant',sans-serif;font-size:18px;line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  .hero{
+    background:
+      radial-gradient(120% 90% at 85% -10%, rgba(224,166,74,.22), transparent 55%),
+      linear-gradient(160deg,#15362e 0%,#1c4339 60%,#173a32 100%);
+    color:#f6f1e6;padding:64px 0 56px;position:relative;overflow:hidden;
+  }
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:46px;
+    background:var(--paper);clip-path:polygon(0 100%,100% 100%,100% 0, 0 70%);}
+  .eyebrow{font-size:14px;letter-spacing:.16em;font-weight:600;color:var(--amber);
+    text-transform:uppercase;margin:0 0 18px;}
+  .hero h1{font-family:'Frank Ruhl Libre',serif;font-weight:900;
+    font-size:clamp(32px,6.6vw,54px);line-height:1.12;margin:0 0 16px;color:#fff;}
+  .hero .sub{font-size:clamp(18px,2.6vw,22px);color:#d8e4dc;font-weight:500;max-width:580px;margin:0;}
+  .hero .byline{margin-top:28px;font-size:15px;color:#a9c1b6;
+    border-top:1px solid rgba(255,255,255,.16);padding-top:18px;display:inline-block;}
+
+  .intro{padding:40px 0 8px;}
+  .intro p.lead{font-size:21px;color:var(--pine);font-weight:600;margin-top:0;}
+  .ribbon{background:var(--pine);color:#fff;font-family:'Frank Ruhl Libre',serif;
+    font-weight:700;font-size:20px;text-align:center;border-radius:14px;padding:16px 20px;margin:18px 0 0;}
+
+  section.part{padding:34px 0;border-top:1px solid var(--line);}
+  .part-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .chip{flex:0 0 auto;width:48px;height:48px;border-radius:50% 50% 50% 8px;
+    background:linear-gradient(150deg,var(--honey),var(--amber));color:#fff;
+    font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:22px;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(191,122,42,.28);}
+  h2{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:clamp(24px,4vw,32px);
+    color:var(--pine);margin:4px 0 0;line-height:1.2;}
+  h3{font-family:'Assistant',sans-serif;font-weight:700;font-size:20px;color:var(--pine-soft);margin:26px 0 6px;}
+  p{margin:12px 0;}
+  strong{color:var(--pine);}
+
+  /* compare two-up */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+  .compare .col{border-radius:16px;padding:20px;border:1px solid var(--line);}
+  .compare .ok{background:var(--sage);border-color:var(--sage-deep);}
+  .compare .bad{background:#fbeee9;border-color:#f0d3c8;}
+  .compare h3{margin-top:0;}
+  .compare .bad h3{color:var(--rust);}
+  .compare ul{padding-right:18px;margin:8px 0 0;}
+  .compare li{margin:6px 0;font-size:16.5px;}
+
+  .card{background:var(--sage);border:1px solid var(--sage-deep);border-radius:16px;padding:20px 22px;margin:20px 0;}
+  .card.warn{background:#fbf1e6;border-color:#efd9bf;}
+  .card.warn h3,.card.warn strong{color:#9a5a17;}
+  .card h3{margin-top:0;}
+  .card ul{margin:8px 0 0;padding-right:20px;}
+  .card li{margin:6px 0;}
+
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0;justify-content:center;}
+  .flow .step{background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:12px 16px;font-weight:600;color:var(--pine);text-align:center;font-size:16px;flex:1 1 130px;}
+  .flow .arrow{color:var(--honey);font-weight:900;font-size:22px;}
+  .flow .step.danger{background:#fbeee9;border-color:#f0d3c8;color:var(--rust);}
+
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0;}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center;}
+  .stat .big{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:34px;color:var(--honey);line-height:1;}
+  .stat .lbl{font-size:14px;color:var(--ink-soft);margin-top:8px;font-weight:600;}
+
+  ul.plain{padding-right:22px;}
+  ul.plain li{margin:8px 0;}
+
+  .habit li{list-style:none;position:relative;padding:12px 40px 12px 12px;margin:8px 0;
+    background:#fff;border:1px solid var(--line);border-radius:12px;font-weight:500;}
+  .habit{padding:0;}
+  .habit li::before{content:"✓";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    width:24px;height:24px;border-radius:50%;background:var(--pine);color:#fff;font-weight:700;
+    display:flex;align-items:center;justify-content:center;font-size:14px;}
+
+  .today{counter-reset:t;list-style:none;padding:0;margin:18px 0;}
+  .today li{counter-increment:t;position:relative;padding:14px 56px 14px 14px;margin:10px 0;
+    background:var(--sage);border-radius:12px;font-weight:600;color:var(--pine);}
+  .today li::before{content:counter(t);position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    width:32px;height:32px;border-radius:50% 50% 50% 8px;background:linear-gradient(150deg,var(--honey),var(--amber));
+    color:#fff;font-family:'Frank Ruhl Libre',serif;display:flex;align-items:center;justify-content:center;font-weight:900;}
+
+  .faq details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff;overflow:hidden;}
+  .faq summary{cursor:pointer;padding:16px 18px;font-weight:700;color:var(--pine);list-style:none;font-size:18px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";float:left;color:var(--honey);font-weight:700;font-size:22px;line-height:1;}
+  .faq details[open] summary::after{content:"–";}
+  .faq details[open] summary{border-bottom:1px solid var(--line);}
+  .faq .a{padding:4px 18px 18px;color:var(--ink-soft);}
+
+  .gold{counter-reset:g;list-style:none;padding:0;margin:18px 0;}
+  .gold li{counter-increment:g;position:relative;padding:14px 52px 14px 14px;margin:10px 0;
+    background:var(--sage);border-radius:12px;font-weight:600;color:var(--pine);}
+  .gold li::before{content:counter(g);position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:8px;background:var(--pine);color:#fff;
+    font-family:'Frank Ruhl Libre',serif;display:flex;align-items:center;justify-content:center;font-weight:900;}
+
+  .cta{margin:46px 0 30px;background:linear-gradient(160deg,#15362e,#214b41);color:#f4efe4;
+    border-radius:22px;padding:40px 30px;text-align:center;position:relative;overflow:hidden;}
+  .cta::before{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;
+    background:radial-gradient(circle,rgba(224,166,74,.3),transparent 70%);}
+  .cta h2{color:#fff;margin:0 0 10px;}
+  .cta p{color:#cfe0d7;max-width:520px;margin:0 auto 26px;font-size:19px;}
+  .wa-btn{display:inline-flex;align-items:center;gap:12px;background:var(--wa);color:#fff;text-decoration:none;
+    font-family:'Assistant',sans-serif;font-weight:700;font-size:21px;padding:18px 34px;border-radius:60px;
+    box-shadow:0 10px 26px rgba(37,211,102,.4);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .wa-btn:hover{background:var(--wa-dark);transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,211,102,.5);}
+  .wa-btn:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+  .wa-btn svg{width:26px;height:26px;fill:#fff;}
+  .cta small{display:block;margin-top:18px;color:#a9c1b6;font-size:14px;}
+
+  .signoff{font-style:italic;color:var(--ink-soft);text-align:center;margin:30px auto;max-width:560px;}
+
+  .wa-float{position:fixed;bottom:20px;left:20px;z-index:50;width:60px;height:60px;border-radius:50%;
+    background:var(--wa);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 22px rgba(37,211,102,.45);animation:pulse 2.4s infinite;}
+  .wa-float svg{width:32px;height:32px;fill:#fff;}
+  @keyframes pulse{0%{box-shadow:0 8px 22px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.5);}
+    70%{box-shadow:0 8px 22px rgba(37,211,102,.45),0 0 0 16px rgba(37,211,102,0);}
+    100%{box-shadow:0 8px 22px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0);}}
+
+  .disclaimer{font-size:13.5px;color:#8a8a7d;line-height:1.6;border-top:1px solid var(--line);
+    padding:24px 0 60px;margin-top:30px;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .wa-float{animation:none;}html{scroll-behavior:auto;}
+  }
+  @media(max-width:520px){
+    body{font-size:17px;}
+    .stats,.compare{grid-template-columns:1fr;}
+    .wa-btn{font-size:18px;padding:16px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">מדריך טבעי לבריאות הלב</p>
+    <h1>הסכנה האמיתית היא לא הכולסטרול — אלא כשהוא&nbsp;מתחמצן</h1>
+    <p class="sub">המון אנשים נלחצים מהמספר בבדיקה. אבל הנזק האמיתי לעורקים מתחיל בתהליך אחר לגמרי. הנה מה שחשוב להבין — ומה אפשר לעשות כבר היום.</p>
+    <span class="byline">נכתב מתוך 12 שנות ליווי נשים וגברים ששומרים על הלב בדרך הטבעית</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="intro reveal">
+    <p class="lead">חשבת שכולסטרול גבוה הוא הבעיה? האמת מפתיעה:</p>
+    <p>הבעיה האמיתית לא מתחילה כשהכולסטרול <em>עולה</em> — אלא כשהוא <strong>מתחמצן</strong>. זה ההבדל שאני מסבירה ללקוחות שלי כבר שנים, וברגע שמבינים אותו, מפסיקים להילחץ מהמספר ומתחילים לטפל בשורש.</p>
+    <div class="ribbon">לא כל כולסטרול הוא "רע". בוא/י נבין מה באמת מסוכן — ואיך מונעים אותו.</div>
+  </section>
+
+  <section class="part reveal">
+    <div class="part-head"><div class="chip">1</div><h2>כולסטרול "רגיל" מול כולסטרול מחומצן</h2></div>
+    <p>קודם כול — הכולסטרול עצמו הוא לא אויב. הגוף משתמש בו לבניית תאים, הורמונים וויטמין D. ה־LDL (מה שמכונה "כולסטרול רע") הוא בעצם <strong>חבילת הובלה</strong> שמעבירה כולסטרול בדם. כל עוד הוא תקין — הוא עושה את עבודתו.</p>
+    <p>הבעיה מתחילה כשחלקיקי ה־LDL נפגשים עם <strong>רדיקלים חופשיים</strong> ומתחמצנים. הכולסטרול המחומצן (oxLDL) הוא כבר חיה אחרת לגמרי: הגוף מזהה אותו כ"מזיק", והשרשרת שמתחילה כאן היא זו שפוגעת בעורקים.</p>
+    <div class="compare">
+      <div class="col ok">
+        <h3>✔️ LDL תקין</h3>
+        <ul>
+          <li>מוביל כולסטרול לתאים</li>
+          <li>חלק מהתפקוד הטבעי של הגוף</li>
+          <li>לא מעורר תגובה דלקתית</li>
+        </ul>
+      </div>
+      <div class="col bad">
+        <h3>✖️ LDL מחומצן</h3>
+        <ul>
+          <li>נתפס כ"פולש" ע"י מערכת החיסון</li>
+          <li>מצית דלקת בדופן כלי הדם</li>
+          <li>שוקע ומתחיל לבנות רובד (פלאק)</li>
+        </ul>
+      </div>
+    </div>
+    <p>במילים פשוטות: <strong>לא הכמות לבדה קובעת, אלא המצב</strong>. אפשר שיהיה לך מספר "גבולי" אבל פחות חמצון — או מספר "תקין" עם הרבה חמצון שמזיק בשקט.</p>
+  </section>
+
+  <section class="part reveal">
+    <div class="part-head"><div class="chip">2</div><h2>למה דווקא החמצון פוגע בכלי הדם</h2></div>
+    <p>הנה שרשרת האירועים, שלב אחרי שלב — זה בדיוק התהליך שאנחנו רוצים לעצור מוקדם:</p>
+    <div class="flow">
+      <div class="step">רדיקלים חופשיים מחמצנים את ה־LDL</div>
+      <div class="arrow">←</div>
+      <div class="step">תאי חיסון בולעים את ה־oxLDL</div>
+      <div class="arrow">←</div>
+      <div class="step danger">נוצרת דלקת ושקיעת שומן בדופן</div>
+      <div class="arrow">←</div>
+      <div class="step danger">מצטבר רובד שמצר את העורק</div>
+    </div>
+    <p>זו ה"שכבה הצהובה" שמצטברת לאט־לאט על דפנות העורקים — בלי שנרגיש. ככל שהיא גדלה, החלל לזרימת הדם מצטמצם, והלב נאלץ לעבוד קשה יותר. מכאן הקשר הישיר ל<strong>דלקת כרונית, לחץ דם, ופגיעה לבבית</strong>.</p>
+    <div class="card warn">
+      <h3>השורה התחתונה</h3>
+      <p>אם רוצים להגן על הלב, לא מספיק "להוריד מספר". צריך גם <strong>להפחית את החמצון</strong> — כלומר לתת לגוף יותר נוגדי חמצון ופחות גורמים שמייצרים רדיקלים חופשיים.</p>
+    </div>
+  </section>
+
+  <section class="part reveal">
+    <div class="part-head"><div class="chip">3</div><h2>הרגלים ששומרים על הלב</h2></div>
+    <p>החדשות הטובות: לחמצון יש "בלמים" טבעיים, והרבה מהם בשליטה שלך. אלה ההרגלים שאני הכי ממליצה עליהם:</p>
+    <ul class="habit">
+      <li>צלחת צבעונית — ירקות ופירות עשירים בנוגדי חמצון (פלפלים, עלים ירוקים, פירות יער)</li>
+      <li>שמן זית איכותי כשומן עיקרי, במקום שומנים מטוגנים ומעובדים</li>
+      <li>הפחתת סוכר ופחמימות מעובדות — מהמאיצים הגדולים של חמצון ודלקת</li>
+      <li>הימנעות מעישון — אחד ממקורות הרדיקלים החופשיים החזקים ביותר</li>
+      <li>תנועה יומיומית — אפילו הליכה של 30 דקות משפרת את בריאות כלי הדם</li>
+      <li>שינה טובה וניהול מתח — מתח כרוני מגביר דלקת בגוף</li>
+      <li>אומגה 3 (דגים שומניים) לתמיכה בלב ובאיזון השומנים</li>
+    </ul>
+    <p>אף הרגל בודד לא "מנצח" לבד — אבל הצירוף שלהם יוצר סביבה הרבה פחות מחמצנת בגוף.</p>
+  </section>
+
+  <section class="part reveal">
+    <div class="part-head"><div class="chip">4</div><h2>מה מראים המחקרים על הגלברידין</h2></div>
+    <p>כאן נכנס אחד הכלים החזקים שאני אוהבת במיוחד — <strong>הליקוריץ</strong>, ובמדויק החומר הפעיל שבו: <strong>גלברידין</strong>. זהו נוגד חמצון ממשפחת הפלבונואידים, והוא נחקר בדיוק בהקשר של חמצון הכולסטרול.</p>
+    <p>במחקר שבחן תמצית ליקוריץ עשירה בגלברידין נמצא, בין היתר:</p>
+    <div class="stats">
+      <div class="stat"><div class="big">55%</div><div class="lbl">ירידה בחמצון הכולסטרול הרע (LDL)</div></div>
+      <div class="stat"><div class="big">19%</div><div class="lbl">עלייה בעמידות הדם בפני חמצון</div></div>
+      <div class="stat"><div class="big">9%</div><div class="lbl">ירידה ברמות ה־LDL הכלליות</div></div>
+      <div class="stat"><div class="big">10%</div><div class="lbl">סיוע בהפחתת לחץ הדם</div></div>
+    </div>
+    <p>במילים אחרות: הגלברידין עוזר <strong>לעצור את הכולסטרול לפני שהוא מתחמצן</strong> — בדיוק בשלב הראשון של השרשרת שראינו למעלה — ובכך מפחית תהליכים דלקתיים בכלי הדם.</p>
+    <div class="card">
+      <h3>אבל — לא כל ליקוריץ שווה</h3>
+      <p>היתרון הזה תלוי לגמרי ב<strong>כמות גלברידין אמיתית</strong> בכמוסה (מינון שנבדק במחקר הוא סביב 12 מ"ג), באיכות המיצוי, ובכך שיש בדיקת מעבדה חיצונית לכל אצווה. בלי זה — אין דרך לדעת אם את/ה באמת מקבל/ת את ההשפעה הזו.</p>
+    </div>
+  </section>
+
+  <section class="part reveal">
+    <div class="part-head"><div class="chip">5</div><h2>5 צעדים פשוטים שאפשר להתחיל היום</h2></div>
+    <ol class="today">
+      <li>הוסיפי לכל ארוחה משהו צבעוני — ירק או פרי עשיר בנוגדי חמצון</li>
+      <li>החליפי שתייה ממותקת במים, ובמטוגן — אפוי או מבושל</li>
+      <li>צאי להליכה יומית קצרה, גם 20–30 דקות עושים הבדל</li>
+      <li>בקשי בבדיקת הדם הבאה לעקוב גם אחרי סמני דלקת, לא רק כולסטרול</li>
+      <li>שקלי תמיכה טבעית בנוגדי חמצון — ובחרי תוסף לפי מינון ואיכות, לא לפי מחיר</li>
+    </ol>
+    <p class="signoff">לא צריך לעשות הכול בבת אחת. צעד אחד עקבי כל שבוע — וזה מצטבר לשינוי אמיתי.</p>
+  </section>
+
+  <section class="part reveal faq">
+    <div class="part-head"><div class="chip">6</div><h2>שאלות שאני נשאלת הרבה</h2></div>
+    <details><summary>אם המספר שלי תקין, אני בטוח/ה?</summary>
+      <div class="a">לא בהכרח. מספר תקין הוא סימן טוב, אבל הוא לא מודד את רמת החמצון. גם עם מספר "סביר" אפשר שיתקיים חמצון מזיק — לכן חשוב להסתכל על התמונה הכוללת ולא רק על שורה אחת בבדיקה.</div></details>
+    <details><summary>נוגדי חמצון מהמזון מספיקים, או שצריך תוסף?</summary>
+      <div class="a">תזונה היא הבסיס ותמיד תבוא קודם. תוסף ממוקד כמו גלברידין יכול להוות תמיכה נוספת — אבל הוא משלים תזונה והרגלים נכונים, לא מחליף אותם.</div></details>
+    <details><summary>תוך כמה זמן מרגישים שינוי?</summary>
+      <div class="a">תמיכה נוגדת חמצון פועלת בהדרגה ובמצטבר. שינוי בערכים נמדד בדרך כלל על פני מספר חודשים של עקביות — שווה לעשות בדיקות דם לפני ואחרי ולעקוב מול הרופא.</div></details>
+    <details><summary>אני כבר נוטל/ת תרופות לכולסטרול או ללחץ דם</summary>
+      <div class="a">אז חשוב במיוחד להתייעץ עם הרופא/ה לפני הוספת כל תוסף, כדי לוודא שאין השפעה הדדית. תמיכה טבעית והמלצות רפואיות יכולות לשבת יחד — אבל בליווי נכון.</div></details>
+  </section>
+
+  <section class="part reveal">
+    <h2>סיכום — נקודות הזהב</h2>
+    <ul class="gold">
+      <li>הסכנה האמיתית היא הכולסטרול המחומצן, לא רק המספר הגבוה</li>
+      <li>חמצון ה־LDL הוא שמצית דלקת ובונה רובד בעורקים</li>
+      <li>נוגדי חמצון, פחות סוכר ופחות עישון = פחות חמצון</li>
+      <li>גלברידין נחקר כמפחית משמעותית את חמצון ה־LDL</li>
+      <li>איכות התוסף קובעת — מינון גלברידין אמיתי ובדיקת מעבדה</li>
+      <li>מתחילים בצעד קטן אחד כבר היום, ובונים עקביות</li>
+    </ul>
+  </section>
+
+  <section class="cta reveal">
+    <h2>רוצה להבין מה מתאים בדיוק לך?</h2>
+    <p>כולסטרול, לחץ דם, סוכר — לכל גוף סיפור משלו. אני מזמינה אותך לשיחת ייעוץ אישית, אחד על אחד, שבה נעבור על המצב שלך ועל הדרך הטבעית לאזן אותו. בלי התחייבות.</p>
+    <a class="wa-btn" href="https://api.whatsapp.com/send/?phone=504207702&text=%D7%94%D7%99%D7%99+%D7%A8%D7%91%D7%A7%D7%94+%D7%90%D7%A9%D7%9E%D7%97+%D7%9C%D7%93%D7%91%D7%A8+%D7%90%D7%99%D7%AA%D7%9A+%D7%9C%D7%92%D7%91%D7%99+%D7%9B%D7%95%D7%9C%D7%A1%D7%98%D7%A8%D7%95%D7%9C+%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA+%D7%94%D7%9C%D7%91&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.911zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      דברו איתי בוואטסאפ
+    </a>
+    <small>השיחה פתוחה לכל שאלה — גם אם עוד לא החלטת כלום.</small>
+  </section>
+
+  <p class="signoff reveal">המדריך הזה נכתב מתוך ידע, ניסיון עם הרבה מאוד אנשים, ורצון אמיתי לעזור לך לשמור על הלב. אני כאן בשבילך 💚</p>
+
+  <div class="disclaimer">
+    המידע במדריך זה מבוסס על מחקרים שונים ומיועד להרחבת ידע בלבד. הוא אינו מהווה ייעוץ רפואי, אבחנה או המלצה לטיפול, ואין בו תחליף לייעוץ רפואי פרטני. בהתאם לנהלי משרד הבריאות, ניתן לייחס סגולות ריפוי לתרופות בלבד. תוספי תזונה אינם תרופה ואינם נועדים לאבחן, לטפל, לרפא או למנוע מחלה כלשהי. בכל בעיה רפואית, ולפני תחילת נטילת כל תוסף או שינוי טיפול, יש להיוועץ ברופא המטפל. תוצאות עשויות להשתנות מאדם לאדם ואין במידע המוצג משום הבטחה לתוצאה.
+  </div>
+
+</main>
+
+<a class="wa-float" href="https://api.whatsapp.com/send/?phone=504207702&text=%D7%94%D7%99%D7%99+%D7%A8%D7%91%D7%A7%D7%94+%D7%90%D7%A9%D7%9E%D7%97+%D7%9C%D7%93%D7%91%D7%A8+%D7%90%D7%99%D7%AA%D7%9A+%D7%9C%D7%92%D7%91%D7%99+%D7%9B%D7%95%D7%9C%D7%A1%D7%98%D7%A8%D7%95%D7%9C+%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA+%D7%94%D7%9C%D7%91&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="פתיחת שיחת וואטסאפ">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.911zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

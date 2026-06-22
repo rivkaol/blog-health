@@ -1,219 +1,242 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>רבקה הולצברג | מאמנת בריאות טבעית</title>
-  <meta name="description" content="רבקה הולצברג - מאמנת בריאות טבעית עם 12 שנות ניסיון. ספר מתכונים, חוברות חינמיות, קורסים ווובינרים ומועדון חברים." />
-  <link rel="stylesheet" href="css/main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>רבקה הולצברג | בריאות טבעית</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- משתנים וצבעים מתואמים למותג --- */
+        :root { 
+            --primary-green: #1B4D3E; 
+            --secondary-green: #2a6a56;
+            --accent-gold: #D4AF37; 
+            --bg-cream: #FCFBF8; 
+            --text-dark: #2C3E50; 
+            --text-light: #5C6E7A;
+            --card-bg: #FFFFFF;
+            --mauve: #8E7B96;       
+            --mauve-light: #F4EFF6; 
+        }
+        
+        body { font-family: 'Rubik', sans-serif; background-color: var(--bg-cream); color: var(--text-dark); margin: 0; padding: 0; line-height: 1.6; }
+        
+        /* Navbar & Hero */
+        .navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 15px rgba(0,0,0,0.03); }
+        .navbar .brand { font-weight: 900; color: var(--primary-green); font-size: 1.5rem; letter-spacing: -0.5px; }
+        
+        .hero { text-align: center; padding: 70px 20px 40px; background: linear-gradient(180deg, rgba(27,77,62,0.03) 0%, rgba(252,251,248,0) 100%); }
+        .hero h1 { font-size: 3.2rem; color: var(--primary-green); font-weight: 800; margin-bottom: 15px; line-height: 1.1; }
+        .hero p { font-size: 1.25rem; color: var(--text-light); font-weight: 400; max-width: 650px; margin: 0 auto; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+        /* --- עיצוב נקי להדרכה באווירת דף הנחיתה --- */
+        .promo-strip {
+            background: linear-gradient(135deg, #ffffff 0%, #F4EFF6 100%);
+            border: 1px solid rgba(142, 123, 150, 0.15);
+            border-right: 6px solid var(--mauve);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 60px;
+            box-shadow: 0 15px 40px rgba(142, 123, 150, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .promo-strip:hover { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(142, 123, 150, 0.18); }
+        
+        @media (min-width: 768px) {
+            .promo-strip { flex-direction: row; text-align: right; justify-content: space-between; padding: 40px 50px; }
+            .promo-content { max-width: 65%; }
+            .promo-action { flex-shrink: 0; }
+        }
+
+        .promo-tag { 
+            background: white; color: var(--mauve); font-weight: 600; font-size: 0.95rem; 
+            padding: 8px 18px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px;
+            margin-bottom: 15px; box-shadow: 0 4px 15px rgba(142, 123, 150, 0.1); border: 1px solid rgba(142, 123, 150, 0.2);
+        }
+        .promo-title { font-size: 1.8rem; font-weight: 800; color: var(--primary-green); margin: 0 0 10px 0; line-height: 1.2; letter-spacing: -0.5px; }
+        .promo-desc { font-size: 1.15rem; color: #555; margin: 0; line-height: 1.5; }
+        
+        /* כפתור זהב מבריק */
+        .promo-action-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3CD58 50%, #C59F2B 100%);
+            color: white; font-size: 1.1rem; font-weight: 700; padding: 16px 36px;
+            border-radius: 50px; text-decoration: none; display: inline-block;
+            transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            position: relative; overflow: hidden; border: none;
+        }
+        .promo-action-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4); }
+        .promo-action-btn::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+            transform: skewX(-25deg); animation: shine 3s infinite;
+        }
+        @keyframes shine { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
+
+        /* --- גריד המאמרים --- */
+        .section-header { font-size: 1.5rem; color: var(--text-dark); font-weight: 800; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+        .section-header::after { content: ''; flex-grow: 1; height: 2px; background: #f0f0f0; border-radius: 2px; }
+        
+        .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        
+        .post-card { 
+            background: var(--card-bg); border: 1px solid #f0f0f0; border-radius: 16px; padding: 30px; 
+            text-decoration: none; display: flex; flex-direction: column; 
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); height: 100%; box-sizing: border-box; 
+        }
+        .post-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.06); border-color: rgba(212, 175, 55, 0.3); }
+        
+        .card-content { display: flex; flex-direction: column; height: 100%; }
+        .tag { font-size: 0.8rem; color: var(--accent-gold); font-weight: 700; background: rgba(212, 175, 55, 0.08); padding: 4px 10px; border-radius: 4px; align-self: flex-start; margin-bottom: 15px; }
+        .card-title { color: var(--primary-green); font-size: 1.35rem; margin: 0 0 12px 0; font-weight: 800; line-height: 1.3; }
+        .card-excerpt { font-size: 1rem; color: var(--text-light); margin-bottom: 25px; flex-grow: 1; line-height: 1.5; }
+        
+        .read-more-btn { color: var(--primary-green); font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; transition: gap 0.2s ease; }
+        .post-card:hover .read-more-btn { gap: 12px; color: var(--secondary-green); }
+        .read-more-btn svg { width: 18px; height: 18px; }
+        
+        .footer { text-align: center; padding: 40px 20px; color: #999; font-size: 0.9rem; margin-top: 60px; border-top: 1px solid #eaeaea; }
+    </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <a href="index.html" class="site-logo">
-        <span class="logo-name">רבקה הולצברג</span>
-        <span class="logo-title">מאמנת בריאות טבעית</span>
-      </a>
-      <nav class="site-nav" aria-label="ניווט ראשי">
-        <a href="index.html" class="nav-link active">בית</a>
-        <a href="about.html" class="nav-link">עלי</a>
-        <a href="book.html" class="nav-link">הספר שלי</a>
-        <a href="freebies.html" class="nav-link">חינמיות</a>
-        <a href="courses.html" class="nav-link">קורסים ווובינרים</a>
-        <a href="blog.html" class="nav-link">בלוג</a>
-        <a href="contact.html" class="nav-link">צור קשר</a>
-        <a href="club.html" class="nav-link nav-cta">המועדון</a>
-      </nav>
-      <button class="hamburger" aria-label="פתח תפריט">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="navbar"><span class="brand">רבקה הולצברג</span></nav>
+    <div class="hero">
+        <h1>בריאות טבעית בדרך שלך</h1>
+        <p>ידע מקצועי, כלים מעשיים ושקט נפשי ליצירת שגרה מאוזנת.</p>
     </div>
-  </div>
-</header>
-<nav class="mobile-nav">
-  <a href="index.html" class="nav-link active">בית</a>
-  <a href="about.html" class="nav-link">עלי</a>
-  <a href="book.html" class="nav-link">הספר שלי</a>
-  <a href="freebies.html" class="nav-link">חינמיות</a>
-  <a href="courses.html" class="nav-link">קורסים ווובינרים</a>
-  <a href="blog.html" class="nav-link">בלוג</a>
-  <a href="contact.html" class="nav-link">צור קשר</a>
-  <a href="club.html" class="nav-link nav-cta">המועדון</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <span class="hero-label">מאמנת בריאות טבעית</span>
-        <h1 class="hero-title">
-          לחיות בריא<br />
-          זה <span>אפשרי</span> ומהנה
-        </h1>
-        <p class="hero-subtitle">
-          12 שנות ניסיון בליווי נשים לאורח חיים בריא — בלי דיאטות, בלי ויתורים, עם המון אהבה לאוכל טעים.
-        </p>
-        <div class="hero-actions">
-          <a href="book.html" class="btn btn-primary btn-lg">הספר שלי</a>
-          <a href="freebies.html" class="btn btn-secondary btn-lg">חינמיות להורדה</a>
+    
+    <div class="container">
+        
+        <div class="promo-strip">
+            <div class="promo-content">
+                <span class="promo-tag">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                    הדרכה מוקלטת במתנה
+                </span>
+                <h2 class="promo-title">למה כוח הרצון נגמר לך בדיוק כשאת צריכה אותו?</h2>
+                <p class="promo-desc">
+                    במקום להתחיל בשיא הכוח ולהישחק, גלי איך לעבור ל"התמדה חכמה"
+                    ולבנות הרגלים יציבים שמחזיקים מעמד.
+                </p>
+            </div>
+            <div class="promo-action">
+                <a href="https://rivkaholtsberg.co.il/webhergel/" class="promo-action-btn">אני רוצה לצפות בהדרכה</a>
+            </div>
         </div>
-      </div>
-      <div class="hero-image-wrap" aria-hidden="true">🌿</div>
-    </div>
-  </div>
-</section>
 
-<!-- STATS -->
-<section class="stats-bar">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number" data-count="500" data-suffix="+">0+</div>
-        <div class="stat-label">נשים שינו את חייהן</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-count="80" data-suffix="+">0+</div>
-        <div class="stat-label">מתכונים בריאים ומשמחים</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-count="12" data-suffix="+">0+</div>
-        <div class="stat-label">שנות ניסיון מקצועי</div>
-      </div>
+        <div class="section-header">פוסטים ומדריכים אחרונים</div>
+        
+        <div class="posts-grid">
+<a href="guides/lik.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">הסכנה האמיתית היא לא הכולסטרול — אלא כשהוא מתחמצן</h3>
+        <p class="card-excerpt">כיצד מחמצן ה-LDL מאיים על בריאות הלב שלך?</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-  </div>
-</section>
-
-<!-- QUICK LINKS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">כל מה שצריך</span>
-      <h2>מה תמצאי כאן?</h2>
-      <p>כל הכלים, התוכן והמשאבים שיעזרו לך לאמץ אורח חיים בריא ומשמח — במקום אחד מסודר.</p>
+</a><a href="guides/kkkkk.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">איך להחזיר לעור את המתיחות והגמישות — מבפנים</h3>
+        <p class="card-excerpt">גלי את הבסיס למראה עור מתוח ובריא יותר.</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-    <div class="quick-links-grid">
-      <a href="about.html" class="quick-card reveal">
-        <span class="quick-card-icon">👩‍🌾</span>
-        <h3>עלי</h3>
-        <p>הסיפור שלי, הניסיון, הערכים שמנחים אותי</p>
-      </a>
-      <a href="book.html" class="quick-card reveal">
-        <span class="quick-card-icon">📗</span>
-        <h3>הספר שלי</h3>
-        <p>80+ מתכונים בריאים שיהפכו את המטבח שלך</p>
-      </a>
-      <a href="freebies.html" class="quick-card reveal">
-        <span class="quick-card-icon">🎁</span>
-        <h3>חינמיות</h3>
-        <p>מדריכים וחוברות להורדה חינמית</p>
-      </a>
-      <a href="courses.html" class="quick-card reveal">
-        <span class="quick-card-icon">🎓</span>
-        <h3>קורסים ווובינרים</h3>
-        <p>הרצאות וקורסים עונתיים לחיים בריאים</p>
-      </a>
-      <a href="club.html" class="quick-card reveal">
-        <span class="quick-card-icon">⭐</span>
-        <h3>המועדון שלי</h3>
-        <p>קהילה חמה עם תכנים בלעדיים — ₪69 לחודש</p>
-      </a>
-      <a href="blog.html" class="quick-card reveal">
-        <span class="quick-card-icon">✍️</span>
-        <h3>בלוג</h3>
-        <p>מאמרים, טיפים ומתכונים בחינם</p>
-      </a>
+</a><a href="guides/liko.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">המדריך המלא לליקוריץ וניקיון כלי הדם</h3>
+        <p class="card-excerpt">גלה איך ליקוריץ מטפל בבריאות כלי הדם שלך.</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section" style="background:var(--color-white);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">מה אומרות</span>
-      <h2>הנשים שצעדו לפניך</h2>
+</a><a href="guides/LEV.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">קולגן, עורקים ובריאות הלב</h3>
+        <p class="card-excerpt">איך קולגן משפיע על בריאות הלב שלך?</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-    <div class="grid-3">
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"רבקה שינתה את הדרך שאני מסתכלת על אוכל. אחרי 3 חודשים בקלאב — ירדתי 8 קילו ואני מרגישה אנרגיה שלא הרגשתי שנים."</p>
-        <div class="testimonial-author">— מיכל כ., תל אביב</div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"הספר של רבקה הפך להיות ספר הבישול שלי. כל מתכון פשוט, טעים ובריא. הילדים שלי אוהבים הכל!"</p>
-        <div class="testimonial-author">— שירה מ., ירושלים</div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"הווובינר על תזונה בחורף שינה את ההבנה שלי לגמרי. מאז אני כבר לא חולה כל שבוע — מדהים!"</p>
-        <div class="testimonial-author">— נעמה ר., חיפה</div>
-      </div>
+</a><a href="guides/nwsh.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">המדריך המלא לשיער בריא וחזק</h3>
+        <p class="card-excerpt">עצרי את נשירת השיער והחזירי לו את הזוהר עכשיו!</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER CTA -->
-<section class="section-sm">
-  <div class="container">
-    <div class="newsletter-cta reveal">
-      <span class="section-label">בחינם</span>
-      <h2>קבלי טיפים ישירות לתיבה</h2>
-      <p>הירשמי לניוזלטר ותקבלי מתכון חדש וטיפ שבועי בתזונה — בחינם לגמרי.</p>
-      <form class="newsletter-form" novalidate>
-        <input type="email" placeholder="כתובת המייל שלך" required autocomplete="email" />
-        <button type="submit" class="btn btn-primary">הרשמה</button>
-      </form>
+</a><a href="guides/kolgen3.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">מפרקים גמישים, חיים בתנועה</h3>
+        <p class="card-excerpt">גלי איך קולגן משיב תנועה וחיים למפרקים שלך.</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo-name">רבקה הולצברג</div>
-        <p>מאמנת בריאות טבעית עם 12 שנות ניסיון. מלווה נשים לאורח חיים בריא ומשמח.</p>
-      </div>
-      <div>
-        <div class="footer-heading">ניווט מהיר</div>
-        <ul class="footer-links">
-          <li><a href="index.html">בית</a></li>
-          <li><a href="about.html">עלי</a></li>
-          <li><a href="book.html">הספר שלי</a></li>
-          <li><a href="freebies.html">חינמיות</a></li>
-          <li><a href="courses.html">קורסים ווובינרים</a></li>
-          <li><a href="club.html">המועדון</a></li>
-          <li><a href="blog.html">בלוג</a></li>
-          <li><a href="contact.html">צור קשר</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-heading">ניוזלטר</div>
-        <p style="color:rgba(255,255,255,0.65);font-size:0.88rem;margin-bottom:0">קבלי טיפים ומתכונים ישירות למייל</p>
-        <form class="footer-newsletter-form" novalidate>
-          <input type="email" placeholder="המייל שלך" required />
-          <button type="submit">הרשמה</button>
-        </form>
-      </div>
+</a><a href="guides/kolgen2.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">הזוהר שחזר</h3>
+        <p class="card-excerpt">גשי לשקם את העור בעזרת קולגן עשיר ואיכותי.</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 רבקה הולצברג. כל הזכויות שמורות.</span>
-      <div class="footer-social">
-        <a href="#" aria-label="אינסטגרם">📷</a>
-        <a href="#" aria-label="פייסבוק">📘</a>
-        <a href="#" aria-label="ווטסאפ">💬</a>
-        <a href="#" aria-label="יוטיוב">▶️</a>
-      </div>
+</a><a href="guides/mavar.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">המדריך המלא לטיפוח העור</h3>
+        <p class="card-excerpt">רוצה עור זוהר? גלי את הסוד בעונות המעבר.</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
     </div>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+</a><a href="guides/kol2.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">הזוהר שחזר</h3>
+        <p class="card-excerpt">איך לחזור לזוהר הטבעי בתקופות מאתגרות.</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
+    </div>
+</a><a href="guides/kolgen.html" class="post-card">
+    <div class="card-content">
+        <div class="tag">מדריך חדש</div>
+        <h3 class="card-title">מה לעשות כשרואים את הסטרס על הפנים</h3>
+        <p class="card-excerpt">הסטרס נחשף על עורך? גלה איך לשנות את המצב.</p>
+        <div class="read-more-btn">
+            קראי עוד
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
+    </div>
+</a>
+</div>
+    </div>
+    <div class="footer">© כל הזכויות שמורות לרבקה הולצברג</div>
 </body>
 </html>
